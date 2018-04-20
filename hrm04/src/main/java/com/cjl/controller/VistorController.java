@@ -17,7 +17,7 @@ public class VistorController {
     private VistorServicec vistorServicec;
 
     @RequestMapping("/vistorLogin")
-    public String vistorLogin(Vistor vistor, Model model){
+    public String vistorLogin(Vistor vistor, Model model) throws Exception{
         //Vistor vistor1 = vistorServicec.login(vistor);
         if (vistor.getName().equals("张三")&&vistor.getPass().equals("123")){
             return "success";

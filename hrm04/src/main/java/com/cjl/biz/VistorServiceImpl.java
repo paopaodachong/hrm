@@ -17,4 +17,9 @@ public class VistorServiceImpl implements VistorServicec {
     public Vistor login(Vistor vistor) {
         return vistorMapper.login(vistor);
     }
+
+    @Override
+    public boolean register(Vistor vistor) {
+        return vistorMapper.add(vistor);
+    }
 }

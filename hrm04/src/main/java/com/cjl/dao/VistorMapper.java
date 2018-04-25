@@ -7,4 +7,5 @@ import com.cjl.model.Vistor;
  */
 public interface VistorMapper {
     Vistor login(Vistor vistor);
+    boolean add(Vistor vistor);
 }

@@ -7,4 +7,6 @@ import com.cjl.model.Vistor;
  */
 public interface VistorServicec {
     Vistor login(Vistor vistor);
+    boolean register(Vistor vistor);
+
 }

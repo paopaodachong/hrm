@@ -26,9 +26,20 @@
     </init-param>
   </servlet>
   <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/js/*</url-pattern>
+    <url-pattern>/css/*</url-pattern>
+    <url-pattern>/images/*</url-pattern>
+    <url-pattern>/fonts/*</url-pattern>
+  </servlet-mapping>
+  <!--设置拦截的请求-->
+  <!--拦截所有的请求-->
+  <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:SpringContext.xml</param-value>

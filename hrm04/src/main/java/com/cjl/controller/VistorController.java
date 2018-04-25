@@ -18,11 +18,27 @@ public class VistorController {
 
     @RequestMapping("/vistorLogin")
     public String vistorLogin(Vistor vistor, Model model) throws Exception{
-        //Vistor vistor1 = vistorServicec.login(vistor);
-        if (vistor.getName().equals("张三")&&vistor.getPass().equals("123")){
+        System.out.println("欢迎来到登录系统");
+        System.out.println(vistor);
+        System.err.println(vistorServicec.login(vistor));
+
+        if (null!=vistor){
             return "success";
         }else{
             return "../../index";
         }
+    }
+
+    @RequestMapping("/toRegister")
+    public String toRegister() throws Exception{
+        return "register";
+    }
+
+    @RequestMapping("/vistorRegister")
+    public String vistorRegister(Vistor vistor,Model model){
+        System.out.println("欢迎来到注册系统");
+
+        System.out.println(vistorServicec.register(vistor));
+        return "success";
     }
 }

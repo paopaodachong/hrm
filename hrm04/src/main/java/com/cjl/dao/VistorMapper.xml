@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cjl.dao.VistorMapper">
+    <insert id="add">
+        insert into vistor(VISTOR_ID,VISTOR_NAME,VISTOR_PASS) values (VISTOR_SEQUENCE.nextval,#{vistor_name},#{vistor_pass})
+    </insert>
     <select id="login" resultType="com.cjl.model.Vistor">
-        select * from user where name=#{name} and pass=#{pass};
+        select * from vistor where VISTOR_NAME = #{vistor_name} and vistor_pass =  #{vistor_pass}
     </select>
+
+
 </mapper>

@@ -30,9 +30,9 @@
 <div id="vistorBody">
     <legend>欢迎来到人事管理系统</legend>
     <form action="vistorLogin" method="post">
-        账号：<input name="name"><br>
-        密码：<input name="pass"><br>
-        <input type="submit" value="登录">尚未注册账号,立即<a href="pages/success">注册</a>
+        账号：<input name="vistor_name"><br>
+        密码：<input name="vistor_pass"><br>
+        <input type="submit" value="登录">尚未注册账号,立即<a href="toRegister">注册</a>
     </form>
 
 </div>

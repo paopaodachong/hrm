@@ -4,9 +4,13 @@ package com.cjl.model;
  * Created by 陈佳乐 on 2018/4/23.
  */
 public class Dept {
+    //部门id
     private Integer dept_id;
+    //部门名称
     private String dept_name;
+    //部门基础薪水
     private Double dept_baseSalary;
+    //部门描述
     private String dept_desc;
 
     public Dept() {

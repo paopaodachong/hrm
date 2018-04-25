@@ -19,7 +19,8 @@ public class Recruit {
     private Date recruit_startDate;
     //招聘结束日期
     private Date recruit_endDate;
-
+    //招聘薪水
+    private Double recruit_salary;
     //招聘部门
     private Dept dept;
     //招聘员工等级
@@ -102,4 +103,5 @@ public class Recruit {
     public void setDeptPosition(DeptPosition deptPosition) {
         this.deptPosition = deptPosition;
     }
+
 }

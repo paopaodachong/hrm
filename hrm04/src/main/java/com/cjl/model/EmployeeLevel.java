@@ -9,10 +9,10 @@ public class EmployeeLevel implements Serializable{
 
     private Integer employeeLevel_id;
     //职位名称
-    //P1~P9 实习生 见习生 助理 正式 专业 资深 高级 教授级高 两院
+    //P1~P9 实习生 见习生 助理 正式 专业 资深
     private String employeeLevel_name;
     //薪水系数
-    //      0.8     1    1.2    1.5  2   3    4     5       6
+    //      0.8     1    1.2    1.5  2   3
     private Double employeeLevel_salaryRatio;
 
     public EmployeeLevel() {

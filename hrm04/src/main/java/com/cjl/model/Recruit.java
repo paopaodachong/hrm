@@ -104,4 +104,11 @@ public class Recruit {
         this.deptPosition = deptPosition;
     }
 
+    public Double getRecruit_salary() {
+        return recruit_salary;
+    }
+
+    public void setRecruit_salary(Double recruit_salary) {
+        this.recruit_salary = recruit_salary;
+    }
 }

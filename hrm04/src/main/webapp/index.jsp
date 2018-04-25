@@ -36,5 +36,6 @@
     </form>
 
 </div>
+<h3><a href="toAdminLogin">我是管理员</a></h3>
 </body>
 </html>

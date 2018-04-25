@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 陈佳乐
-  Date: 2018/4/20
-  Time: 17:00
+  Date: 2018/4/25
+  Time: 20:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,11 +13,15 @@
 <html>
 <head>
     <base href="<%=basePath%>"/>
-    <title></title>
+    <title>管理员登录界面</title>
 </head>
 <body>
-    哈哈哈
-    <h3><a href="getCurRecruit">查看所有招聘</a></h3>
-
+    <div>
+        <form action="adminLogin" method="post">
+            账号:<input type="text" name="admin_name"><br>
+            密码:<input type="password" name="admin_pass"><br>
+            <input type="submit" value="登录"> &nbsp; <input type="reset" value="重置">
+        </form>
+    </div>
 </body>
 </html>

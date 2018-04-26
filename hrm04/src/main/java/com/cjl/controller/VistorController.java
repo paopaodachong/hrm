@@ -49,9 +49,15 @@ public class VistorController {
     }
 
     @RequestMapping("/vistorRegister")
-    public String vistorRegister(Vistor vistor,Model model)throws Exception{
+    public String vistorRegister(Vistor vistor,Model model){
         System.out.println("欢迎来到注册系统");
-        if (vistorServicec.register(vistor)){
+        boolean flag = false;
+        try {
+            flag = vistorServicec.register(vistor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag){
             model.addAttribute("message","注册成功!请登录!!!");
             return "../../index";
         }else{

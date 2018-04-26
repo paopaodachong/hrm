@@ -19,7 +19,7 @@ public class VistorServiceImpl implements VistorServicec {
     }
 
     @Override
-    public boolean register(Vistor vistor) {
+    public boolean register(Vistor vistor){
         return vistorMapper.add(vistor);
     }
 }

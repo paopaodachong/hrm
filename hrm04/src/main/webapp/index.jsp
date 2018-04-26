@@ -29,6 +29,7 @@
 <body>
 <div id="vistorBody">
     <legend>欢迎来到人事管理系统</legend>
+    <span>${message}</span><br>
     <form action="vistorLogin" method="post">
         账号：<input name="vistor_name"><br>
         密码：<input name="vistor_pass"><br>

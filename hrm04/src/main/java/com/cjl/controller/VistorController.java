@@ -2,6 +2,7 @@ package com.cjl.controller;
 
 import com.cjl.biz.RecruitService;
 import com.cjl.biz.VistorServicec;
+import com.cjl.model.IdCard;
 import com.cjl.model.Recruit;
 import com.cjl.model.Vistor;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,7 @@ public class VistorController {
         System.err.println(vistorServicec.login(vistor));
 
         if (null!=vistor){
+            model.addAttribute("vistor",vistor);
             return "success";
         }else{
             return "../../index";
@@ -41,11 +43,15 @@ public class VistorController {
     }
 
     @RequestMapping("/vistorRegister")
-    public String vistorRegister(Vistor vistor,Model model){
+    public String vistorRegister(Vistor vistor,Model model)throws Exception{
         System.out.println("欢迎来到注册系统");
-
-        System.out.println(vistorServicec.register(vistor));
-        return "success";
+        if (vistorServicec.register(vistor)){
+            model.addAttribute("message","注册成功!请登录!!!");
+            return "../../index";
+        }else{
+            model.addAttribute("message","注册失败!请重新注册!!!");
+            return "register";
+        }
     }
 
     /**
@@ -59,5 +65,17 @@ public class VistorController {
 
         model.addAttribute("recruits",recruits);
         return "recruitLook";
+    }
+
+    @RequestMapping("/toAddIdcard")
+    public String toAddIdcard(){
+        return "addIdcard";
+    }
+
+    @RequestMapping("/addIdcard")
+    public String addIdcard(IdCard idCard,Model model){
+        System.out.println(idCard);
+
+        return "test";
     }
 }

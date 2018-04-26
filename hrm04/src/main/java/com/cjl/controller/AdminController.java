@@ -42,8 +42,25 @@ public class AdminController {
     @Resource
     private RecruitService recruitService;
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping("/getAll")
     public String getAll(Model model) {
+        //mvc m 设置获取相应系数
+        //调用私有方法getAllDetails
+        model = getAllDetails(model);
+        return "adminSeeAll";
+    }
+
+    /**
+     *
+     * @param model
+     * @return
+     */
+    private Model getAllDetails(Model model){
         List<Dept> depts = deptService.getAllDept();
         List<DeptPosition> deptPositions = deptPositionService.getAllDeptPosition();
         List<EmployeeLevel> employeeLevels = employeeLevelService.getAllEmployeeLevel();
@@ -53,7 +70,8 @@ public class AdminController {
         model.addAttribute("deptPositions",deptPositions);
         model.addAttribute("employeeLevels",employeeLevels);
         model.addAttribute("recruits",recruits);
-
-        return "adminSeeAll";
+        return model;
     }
+
+
 }

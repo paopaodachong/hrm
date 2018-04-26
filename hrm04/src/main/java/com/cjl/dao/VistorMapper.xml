@@ -7,6 +7,9 @@
     <select id="login" resultType="com.cjl.model.Vistor">
         select * from vistor where VISTOR_NAME = #{vistor_name} and vistor_pass =  #{vistor_pass}
     </select>
+    <select id="selectVistorById" resultType="com.cjl.model.Vistor">
+        SELECT * from VISTOR where VISTOR_ID = #{vistor_id}
+    </select>
 
 
 </mapper>

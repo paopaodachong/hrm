@@ -1,5 +1,6 @@
 package com.cjl.dao;
 
+import com.cjl.model.IdCard;
 import com.cjl.model.Vistor;
 
 /**
@@ -8,4 +9,5 @@ import com.cjl.model.Vistor;
 public interface VistorMapper {
     Vistor login(Vistor vistor);
     boolean add(Vistor vistor);
+    Vistor selectVistorById(Integer vistor_id);
 }

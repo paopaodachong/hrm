@@ -1,13 +1,17 @@
 package com.cjl.controller;
 
+import com.cjl.biz.IdCardService;
 import com.cjl.biz.RecruitService;
 import com.cjl.biz.VistorServicec;
 import com.cjl.model.IdCard;
 import com.cjl.model.Recruit;
 import com.cjl.model.Vistor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,6 +20,7 @@ import java.util.List;
  * Created by 陈佳乐 on 2018/4/20.
  */
 @Controller
+@SessionAttributes("vistor")
 public class VistorController {
     @Resource
     private VistorServicec vistorServicec;
@@ -24,10 +29,11 @@ public class VistorController {
     private RecruitService recruitService;
 
     @RequestMapping("/vistorLogin")
+
     public String vistorLogin(Vistor vistor, Model model) throws Exception{
         System.out.println("欢迎来到登录系统");
         System.out.println(vistor);
-        System.err.println(vistorServicec.login(vistor));
+        vistor = vistorServicec.login(vistor);
 
         if (null!=vistor){
             model.addAttribute("vistor",vistor);
@@ -72,10 +78,26 @@ public class VistorController {
         return "addIdcard";
     }
 
-    @RequestMapping("/addIdcard")
-    public String addIdcard(IdCard idCard,Model model){
-        System.out.println(idCard);
 
+    @Resource
+    private IdCardService idCardService;
+
+    /**
+     *
+     * @param idCard
+     * @param vistor
+     * @param model
+     * @return
+     */
+    @RequestMapping("/addIdcard")
+    public String addIdcard(IdCard idCard, @ModelAttribute("vistor")Vistor vistor, Model model){
+        System.out.println(idCard);
+        System.out.println(vistor);
+        idCard.setVistor(vistor);
+        System.out.println(idCard);
+        idCardService.addIdCard(idCard);
         return "test";
     }
+
+
 }

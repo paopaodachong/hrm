@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.IdCardMapper">
+    <insert id="addIdCard" parameterType="com.cjl.model.IdCard">
+        insert into T_IDCARD (IDCARD_ID, IDCARD_NUM, IDCARD_NAME, IDCARD_GENDER, IDCARD_BIRTHDAY, IDCARD_ADDRESS, VISTOR_ID) VALUES
+          (IDCARD_SENQUENCE.nextval,#{idcard_num},#{idcard_name},#{idcard_gender},#{idcard_birthday},#{idcard_address},#{vistor.vistor_id})
+    </insert>
+
+
+    <select id="selectIdCardById" resultMap="idCardMapper" >
+        SELECT * from T_IDCARD where IDCARD_ID = #{idcard_id}
+    </select>
+
+    <resultMap id="idCardMapper" type="com.cjl.model.IdCard">
+        <id property="idcard_id" column="idcard_id"/>
+        <result property="idcard_num" column="idcard_num"/>
+        <result property="idcard_name" column="idcard_name"/>
+        <result property="idcard_gender" column="idcard_gender"/>
+        <result property="idcard_birthday" column="idcard_birthday"/>
+        <result property="idcard_address" column="idcard_address"/>
+        <association property="vistor" column="vistor_id" select="selectIdCardById" javaType="com.cjl.model.Vistor"/>
+    </resultMap>
+</mapper>

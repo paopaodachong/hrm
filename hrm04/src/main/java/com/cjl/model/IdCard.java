@@ -1,5 +1,7 @@
 package com.cjl.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -16,6 +18,7 @@ public class IdCard {
     //身份证性别
     private String idcard_gender;
     //生日
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date idcard_birthday;
     //家庭住址
     private String idcard_address;

@@ -1,8 +1,10 @@
 package com.cjl.controller;
 
+import com.cjl.biz.EducationService;
 import com.cjl.biz.IdCardService;
 import com.cjl.biz.RecruitService;
 import com.cjl.biz.VistorServicec;
+import com.cjl.model.Education;
 import com.cjl.model.IdCard;
 import com.cjl.model.Recruit;
 import com.cjl.model.Vistor;
@@ -105,5 +107,16 @@ public class VistorController {
         return "test";
     }
 
-
+    @RequestMapping("/toAddEdu")
+    public String toAddEdu(){
+        return "addEducation";
+    }
+    @Resource
+    private EducationService educationService;
+    @RequestMapping("/addEdu")
+    public String addEdu(Education education,@ModelAttribute("vistor") Vistor vistor,Model model){
+        education.setVistor(vistor);
+        educationService.addEdu(education);
+        return "test";
+    }
 }

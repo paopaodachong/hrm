@@ -22,7 +22,7 @@
             身份证号码:<input type="text" name="idcard_num"><br>
             姓名:<input type="text" name="idcard_name"><br>
             性别:<input type="text" name="idcard_gender"><br>
-            生日:<input type="date" name="idcard_birthday"><br>
+            <%--生日:<input type="date" name="idcard_birthday"><br>--%>
             家庭住址:<input type="text" name="idcard_address"><br>
             <input type="number" name="vistor_id" readonly="readonly" hidden="hidden" value="${vistor.vistor_id}">
             <input type="submit" value="确认提交"> &nbsp; <input type="reset" value="重新填写">

@@ -14,7 +14,7 @@ public class IdCard {
     //身份证名字
     private String idcard_name;
     //身份证性别
-    private String gender;
+    private String idcard_gender;
     //生日
     private Date idcard_birthday;
     //家庭住址
@@ -49,12 +49,12 @@ public class IdCard {
         this.idcard_name = idcard_name;
     }
 
-    public String getGender() {
-        return gender;
+    public String getIdcard_gender() {
+        return idcard_gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setIdcard_gender(String idcard_gender) {
+        this.idcard_gender = idcard_gender;
     }
 
     public Date getIdcard_birthday() {
@@ -87,7 +87,7 @@ public class IdCard {
                 "idcard_id=" + idcard_id +
                 ", idcard_num='" + idcard_num + '\'' +
                 ", idcard_name='" + idcard_name + '\'' +
-                ", gender='" + gender + '\'' +
+                ", gender='" + idcard_gender + '\'' +
                 ", idcard_birthday=" + idcard_birthday +
                 ", idcard_address='" + idcard_address + '\'' +
                 ", vistor=" + vistor +

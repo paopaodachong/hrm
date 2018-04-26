@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.JobExpMapper">
+    <insert id="addJobExp">
+        insert into T_JOBEXP (JOBEXP_ID, JOBEXP_STARTDATE, JOBEXP_ENDDATE, JOBEXP_POSITION, JOBEXP_DESC, JOBEXP_SALARY, VISTOR_ID) VALUES
+        (JOBEXP_SENQUENCE.nextval,#{jobExp_startDate},#{jobExp_endDate},#{jobExp_position},#{jobExp_desc},#{jobExp_salary},#{vistor.vistor_id})
+    </insert>
+</mapper>

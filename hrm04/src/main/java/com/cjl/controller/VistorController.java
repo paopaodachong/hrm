@@ -1,13 +1,7 @@
 package com.cjl.controller;
 
-import com.cjl.biz.EducationService;
-import com.cjl.biz.IdCardService;
-import com.cjl.biz.RecruitService;
-import com.cjl.biz.VistorServicec;
-import com.cjl.model.Education;
-import com.cjl.model.IdCard;
-import com.cjl.model.Recruit;
-import com.cjl.model.Vistor;
+import com.cjl.biz.*;
+import com.cjl.model.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -117,6 +111,19 @@ public class VistorController {
     public String addEdu(Education education,@ModelAttribute("vistor") Vistor vistor,Model model){
         education.setVistor(vistor);
         educationService.addEdu(education);
+        return "test";
+    }
+
+    @RequestMapping("toAddJobExp")
+    public String toAddJobExp(){
+        return "addJobExp";
+    }
+    @Resource
+    private JobExpService jobExpService;
+    @RequestMapping("/addJobExp")
+    public String addJobExp(JobExp jobExp,@ModelAttribute("vistor")Vistor vistor,Model model){
+        jobExp.setVistor(vistor);
+        jobExpService.addJobExp(jobExp);
         return "test";
     }
 }

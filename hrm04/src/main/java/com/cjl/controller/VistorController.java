@@ -105,6 +105,7 @@ public class VistorController {
     public String toAddEdu(){
         return "addEducation";
     }
+
     @Resource
     private EducationService educationService;
     @RequestMapping("/addEdu")

@@ -14,6 +14,11 @@ import java.util.List;
 public class DeptServiceImpl implements DeptService {
     @Resource
     private DeptMapper deptMapper;
+
+    /**
+     * 获取所有部门的方法
+     * @return
+     */
     @Override
     public List<Dept> getAllDept() {
         return deptMapper.getAllDept();

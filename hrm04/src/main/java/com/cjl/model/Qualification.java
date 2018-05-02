@@ -3,7 +3,7 @@ package com.cjl.model;
 import java.io.Serializable;
 
 /**
- * 应聘记录实体类
+ * 电子应聘记录实体类
  * Created by 陈佳乐 on 2018/4/23.
  */
 public class Qualification implements Serializable{
@@ -13,7 +13,7 @@ public class Qualification implements Serializable{
     //应聘状态
     //0 未查看,新建
     //1 已查看,拒绝
-    //2 已查看,同意
+    //2 已查看,同意,邀请面试
     private Integer qua_state;
 
     public Qualification() {

@@ -126,6 +126,7 @@ public class VistorController {
         jobExpService.addJobExp(jobExp);
         return "test";
     }
+
     @Resource
     private ResumeService resumeService;
     @RequestMapping("/lookResume")

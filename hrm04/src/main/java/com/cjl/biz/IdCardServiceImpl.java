@@ -13,11 +13,22 @@ import javax.annotation.Resource;
 public class IdCardServiceImpl implements IdCardService {
     @Resource
     private IdCardMapper idCardMapper;
+
+    /**
+     * 添加个人信息
+     * @param idCard
+     * @return
+     */
     @Override
     public boolean addIdCard(IdCard idCard) {
         return idCardMapper.addIdCard(idCard);
     }
 
+    /**
+     * 根据游客id选取个人信息
+     * @param vistor_id
+     * @return
+     */
     @Override
     public IdCard selectIdCardByVistorId(Integer vistor_id) {
         return idCardMapper.selectIdCardByVistorId(vistor_id);

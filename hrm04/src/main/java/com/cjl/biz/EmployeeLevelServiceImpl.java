@@ -14,6 +14,7 @@ import java.util.List;
 public class EmployeeLevelServiceImpl implements EmployeeLevelService {
     @Resource
     private EmployeeLevelMapper employeeLevelMapper;
+    //获取所有职员等级的方法
     @Override
     public List<EmployeeLevel> getAllEmployeeLevel() {
         return employeeLevelMapper.getAllEmployeeLevel();

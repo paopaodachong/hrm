@@ -14,6 +14,11 @@ import java.util.List;
 public class DeptPositionServiceImpl implements DeptPositionService {
     @Resource
     private DeptPositionMapper deptPositionMapper;
+
+    /**
+     * 获取所有部门职位的方法
+     * @return
+     */
     @Override
     public List<DeptPosition> getAllDeptPosition() {
         return deptPositionMapper.getAllDeptPosition();

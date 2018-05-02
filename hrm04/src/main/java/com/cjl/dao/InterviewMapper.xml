@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.InterviewMapper">
+    <insert id="addInterview">
+        insert into T_INTERVIEW (INTERVIEW_ID, QUA_ID, INTERVIEW_CREATETIME, INTERVIEW_HAPPENTIME, INTERVIEW_STATE) VALUES
+        (INTERVIEW_SENQUENCE.nextval,#{qualification.qua_id},sysdate,#{interview_happenTime},#{interview_state})
+    </insert>
+    <update id="updateInterviewFailed">
+        update T_INTERVIEW set INTERVIEW_STATE = 1 where INTERVIEW_ID = #{interview_id}
+    </update>
+    <update id="updateInterviewSuccess">
+        update T_INTERVIEW set INTERVIEW_STATE = 2 where INTERVIEW_ID = #{interview_id}
+    </update>
+    <update id="updateInterviews">
+        update T_INTERVIEW set INTERVIEW_STATE = 3 where sysdate > INTERVIEW_HAPPENTIME
+    </update>
+</mapper>

@@ -13,7 +13,6 @@ public class Qualification implements Serializable{
     //应聘状态
     //0 未查看,新建
     //1 已查看,拒绝
-    //2 已查看,同意,邀请面试
     private Integer qua_state;
 
     public Qualification() {

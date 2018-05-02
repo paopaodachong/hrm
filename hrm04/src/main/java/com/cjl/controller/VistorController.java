@@ -2,6 +2,7 @@ package com.cjl.controller;
 
 import com.cjl.biz.*;
 import com.cjl.model.*;
+import com.sun.tracing.dtrace.Attributes;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
  * Created by 陈佳乐 on 2018/4/20.
  */
 @Controller
-@SessionAttributes("vistor")
 public class VistorController {
     @Resource
     private VistorServicec vistorServicec;
@@ -25,14 +26,13 @@ public class VistorController {
     private RecruitService recruitService;
 
     @RequestMapping("/vistorLogin")
-
-    public String vistorLogin(Vistor vistor, Model model) throws Exception{
+    public String vistorLogin(Vistor vistor, Model model, HttpSession httpSession) throws Exception{
         System.out.println("欢迎来到登录系统");
         System.out.println(vistor);
         vistor = vistorServicec.login(vistor);
 
         if (null!=vistor){
-            model.addAttribute("vistor",vistor);
+            httpSession.setAttribute("vistor",vistor);
             return "success";
         }else{
             return "../../index";
@@ -87,14 +87,14 @@ public class VistorController {
     /**
      *
      * @param idCard
-     * @param vistor
+     * @param httpSession
      * @param model
      * @return
      */
     @RequestMapping("/addIdcard")
-    public String addIdcard(IdCard idCard, @ModelAttribute("vistor")Vistor vistor, Model model){
+    public String addIdcard(IdCard idCard, HttpSession httpSession, Model model){
         System.out.println(idCard);
-        System.out.println(vistor);
+        Vistor vistor = (Vistor) httpSession.getAttribute("vistor");
         idCard.setVistor(vistor);
         System.out.println(idCard);
         idCardService.addIdCard(idCard);
@@ -108,7 +108,8 @@ public class VistorController {
     @Resource
     private EducationService educationService;
     @RequestMapping("/addEdu")
-    public String addEdu(Education education,@ModelAttribute("vistor") Vistor vistor,Model model){
+    public String addEdu(Education education,HttpSession httpSession,Model model){
+        Vistor vistor = (Vistor) httpSession.getAttribute("vistor");
         education.setVistor(vistor);
         educationService.addEdu(education);
         return "test";
@@ -121,7 +122,8 @@ public class VistorController {
     @Resource
     private JobExpService jobExpService;
     @RequestMapping("/addJobExp")
-    public String addJobExp(JobExp jobExp,@ModelAttribute("vistor")Vistor vistor,Model model){
+    public String addJobExp(JobExp jobExp,HttpSession httpSession,Model model){
+        Vistor vistor = (Vistor) httpSession.getAttribute("vistor");
         jobExp.setVistor(vistor);
         jobExpService.addJobExp(jobExp);
         return "test";
@@ -130,7 +132,9 @@ public class VistorController {
     @Resource
     private ResumeService resumeService;
     @RequestMapping("/lookResume")
-    public String lookResume(@ModelAttribute("vistor")Vistor vistor,Model model){
+    public String lookResume(HttpSession httpSession, Model model){
+        Vistor vistor = (Vistor) httpSession.getAttribute("vistor");
+
         Resume resume = resumeService.lookResumeByVistorId(vistor.getVistor_id());
         Vistor vistor1 = vistorServicec.selectById(vistor.getVistor_id());
         IdCard idCard = idCardService.selectIdCardByVistorId(vistor.getVistor_id());

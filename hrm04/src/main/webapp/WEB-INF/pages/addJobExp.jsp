@@ -17,7 +17,8 @@
 </head>
 <body>
     <div>
-        <h3>请在下方表格中输入您的工作经验的相关信息</h3>
+        <h3>请在下方表格中输入您的工作经验的相关信息</h3><br>
+
         <form action="addJobExp" method="post">
             开始日期:<input type="date" name="jobExp_startDate"><br>
             结束日期:<input type="date" name="jobExp_endDate"><br>

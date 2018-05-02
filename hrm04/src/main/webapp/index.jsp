@@ -38,5 +38,6 @@
 
 </div>
 <h3><a href="toAdminLogin">我是管理员</a></h3>
+<h3><a href="toEmployeeLogin">我是员工</a></h3>
 </body>
 </html>

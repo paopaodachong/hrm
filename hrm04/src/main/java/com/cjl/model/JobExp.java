@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
+ * 工作经验实体类
  * Created by 陈佳乐 on 2018/4/26.
  */
 public class JobExp {

@@ -17,4 +17,9 @@ public class IdCardServiceImpl implements IdCardService {
     public boolean addIdCard(IdCard idCard) {
         return idCardMapper.addIdCard(idCard);
     }
+
+    @Override
+    public IdCard selectIdCardByVistorId(Integer vistor_id) {
+        return idCardMapper.selectIdCardByVistorId(vistor_id);
+    }
 }

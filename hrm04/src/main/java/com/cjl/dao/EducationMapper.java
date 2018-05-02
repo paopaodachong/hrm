@@ -7,4 +7,5 @@ import com.cjl.model.Education;
  */
 public interface EducationMapper {
     boolean addEdu(Education education);
+    Education selectByVistorId(Integer vistor_id);
 }

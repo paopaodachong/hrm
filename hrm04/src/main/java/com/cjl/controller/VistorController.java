@@ -126,4 +126,25 @@ public class VistorController {
         jobExpService.addJobExp(jobExp);
         return "test";
     }
+    @Resource
+    private ResumeService resumeService;
+    @RequestMapping("/lookResume")
+    public String lookResume(@ModelAttribute("vistor")Vistor vistor,Model model){
+        Resume resume = resumeService.lookResumeByVistorId(vistor.getVistor_id());
+        Vistor vistor1 = vistorServicec.selectById(vistor.getVistor_id());
+        IdCard idCard = idCardService.selectIdCardByVistorId(vistor.getVistor_id());
+        Education education = educationService.selectByVistorId(vistor.getVistor_id());
+        List<JobExp> jobExps = jobExpService.selectByVistorId(vistor.getVistor_id());
+
+
+        resume.setVistor(vistor1);
+        resume.setIdCard(idCard);
+        System.out.println(idCard);
+        resume.setEducation(education);
+        resume.setJobExps(jobExps);
+
+        System.out.println(resume);
+        model.addAttribute("resume",resume);
+        return "lookResume";
+    }
 }

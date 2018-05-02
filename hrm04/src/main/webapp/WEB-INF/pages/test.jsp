@@ -16,6 +16,6 @@
     <title></title>
 </head>
 <body>
-
+    <h3>${resume}</h3>
 </body>
 </html>

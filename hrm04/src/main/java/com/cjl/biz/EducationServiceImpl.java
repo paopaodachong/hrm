@@ -17,4 +17,9 @@ public class EducationServiceImpl implements EducationService {
     public boolean addEdu(Education education) {
         return educationMapper.addEdu(education);
     }
+
+    @Override
+    public Education selectByVistorId(Integer vistor_id) {
+        return educationMapper.selectByVistorId(vistor_id);
+    }
 }

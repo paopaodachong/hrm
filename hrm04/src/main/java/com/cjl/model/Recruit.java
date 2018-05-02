@@ -1,12 +1,16 @@
 package com.cjl.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 显示招聘类,显示招聘信息
  * Created by 陈佳乐 on 2018/4/23.
  */
 //招聘实体类
-public class Recruit {
+public class Recruit implements Serializable{
     //招聘id
     private Integer recruit_id;
     //招聘名字
@@ -18,6 +22,7 @@ public class Recruit {
     //招聘开始日期
     private Date recruit_startDate;
     //招聘结束日期
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date recruit_endDate;
     //招聘薪水
     private Double recruit_salary;

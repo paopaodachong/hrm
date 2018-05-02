@@ -10,6 +10,9 @@
     <select id="selectIdCardById" resultMap="idCardMapper" >
         SELECT * from T_IDCARD where IDCARD_ID = #{idcard_id}
     </select>
+    <select id="selectIdCardByVistorId" resultMap="idCardMapper">
+        SELECT * from T_IDCARD i,VISTOR v WHERE i.VISTOR_ID = #{vistor_id} and i.VISTOR_ID = v.VISTOR_ID
+    </select>
 
     <resultMap id="idCardMapper" type="com.cjl.model.IdCard">
         <id property="idcard_id" column="idcard_id"/>
@@ -18,6 +21,6 @@
         <result property="idcard_gender" column="idcard_gender"/>
         <result property="idcard_birthday" column="idcard_birthday"/>
         <result property="idcard_address" column="idcard_address"/>
-        <association property="vistor" column="vistor_id" select="selectIdCardById" javaType="com.cjl.model.Vistor"/>
+        <association property="vistor" column="vistor_id" select="com.cjl.dao.VistorMapper.selectVistorById" javaType="com.cjl.model.Vistor"/>
     </resultMap>
 </mapper>

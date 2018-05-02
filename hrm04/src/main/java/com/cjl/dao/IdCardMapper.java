@@ -8,4 +8,5 @@ import com.cjl.model.IdCard;
 public interface IdCardMapper {
     boolean addIdCard(IdCard idCard);
     IdCard selectIdCardById(Integer idcard_id);
+    IdCard selectIdCardByVistorId(Integer vistor_id);
 }

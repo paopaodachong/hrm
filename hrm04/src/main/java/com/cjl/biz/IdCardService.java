@@ -7,4 +7,5 @@ import com.cjl.model.IdCard;
  */
 public interface IdCardService {
     boolean addIdCard(IdCard idCard);
+    IdCard selectIdCardByVistorId(Integer vistor_id);
 }

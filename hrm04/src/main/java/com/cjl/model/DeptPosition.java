@@ -3,6 +3,7 @@ package com.cjl.model;
 import java.io.Serializable;
 
 /**
+ * 职位实体类
  * Created by 陈佳乐 on 2018/4/25.
  */
 public class DeptPosition implements Serializable {

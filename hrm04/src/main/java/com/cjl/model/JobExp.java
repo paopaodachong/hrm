@@ -83,4 +83,17 @@ public class JobExp {
     public void setVistor(Vistor vistor) {
         this.vistor = vistor;
     }
+
+    @Override
+    public String toString() {
+        return "JobExp{" +
+                "jobExp_id=" + jobExp_id +
+                ", jobExp_startDate=" + jobExp_startDate +
+                ", jobExp_endDate=" + jobExp_endDate +
+                ", jobExp_position='" + jobExp_position + '\'' +
+                ", jobExp_desc='" + jobExp_desc + '\'' +
+                ", jobExp_salary=" + jobExp_salary +
+                ", vistor=" + vistor +
+                '}';
+    }
 }

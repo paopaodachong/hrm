@@ -22,4 +22,9 @@ public class VistorServiceImpl implements VistorServicec {
     public boolean register(Vistor vistor){
         return vistorMapper.add(vistor);
     }
+
+    @Override
+    public Vistor selectById(Integer vistor_id) {
+        return vistorMapper.selectVistorById(vistor_id);
+    }
 }

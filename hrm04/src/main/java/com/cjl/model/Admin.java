@@ -3,6 +3,7 @@ package com.cjl.model;
 import java.io.Serializable;
 
 /**
+ * 管理员实体类
  * Created by 陈佳乐 on 2018/4/23.
  */
 public class Admin implements Serializable{

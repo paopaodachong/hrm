@@ -3,6 +3,7 @@ package com.cjl.model;
 import java.io.Serializable;
 
 /**
+ * 职员等级实体类
  * Created by 陈佳乐 on 2018/4/25.
  */
 public class EmployeeLevel implements Serializable{

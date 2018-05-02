@@ -5,4 +5,7 @@
         insert into T_EDUCATION (EDU_ID, EDU_SCHOOLNAME, EDU_MAJORNAME, EDU_STARTTIME, EDU_TYPE, EDU_LEVEL, EDU_DEGREE, VISTOR_ID) VALUES
         (EDU_SENQUENCE.nextval,#{edu_schoolName},#{edu_majorName},#{edu_startTime},#{edu_type},#{edu_level},#{edu_degree},#{vistor.vistor_id})
     </insert>
+    <select id="selectByVistorId" resultType="com.cjl.model.Education">
+        SELECT * from T_EDUCATION where VISTOR_ID = #{vistor_id}
+    </select>
 </mapper>

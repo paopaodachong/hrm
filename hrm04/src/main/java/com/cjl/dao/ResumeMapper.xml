@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.ResumeMapper">
+    <insert id="addResume">
+        insert into T_RESUME (RESUME_ID, VISTOR_ID) VALUES (RESUME_SEQUENCE.nextval,#{vistor_id})
+    </insert>
+    <select id="lookResumeByVistorId" resultType="com.cjl.model.Resume">
+        select * from T_RESUME r,VISTOR v,T_IDCARD i,T_EDUCATION e,T_JOBEXP j where r.VISTOR_ID = #{vistor_id}
+        and v.VISTOR_ID = #{vistor_id} and i.VISTOR_ID = #{vistor_id} and e.VISTOR_ID = #{vistor_id} AND j.VISTOR_ID = #{vistor_id}
+    </select>
+</mapper>

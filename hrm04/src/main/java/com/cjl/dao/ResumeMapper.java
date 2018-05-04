@@ -8,4 +8,5 @@ import com.cjl.model.Resume;
 public interface ResumeMapper {
     Resume lookResumeByVistorId(Integer vistor_id);
     boolean addResume(Integer vistor_id);
+    Resume selectResumeByResumeId(Integer resume_id);
 }

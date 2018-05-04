@@ -48,4 +48,14 @@ public class Dept {
     public void setDept_desc(String dept_desc) {
         this.dept_desc = dept_desc;
     }
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "dept_id=" + dept_id +
+                ", dept_name='" + dept_name + '\'' +
+                ", dept_baseSalary=" + dept_baseSalary +
+                ", dept_desc='" + dept_desc + '\'' +
+                '}';
+    }
 }

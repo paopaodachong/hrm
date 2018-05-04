@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cjl.dao.EmployeeMapper">
-    <select id="loginEmployee" resultType="com.cjl.model.Employee">
+    <select id="loginEmployee" resultMap="employeeMapper">
         select * from T_EMPLOYEE where EMPLOYEE_NAME = #{employee_name} and EMPLOYEE_PASS = #{employee_pass}
     </select>
+
+    <resultMap id="employeeMapper" type="com.cjl.model.Employee">
+        <result property="employee_id" column="employee_id" />
+        <result property="employee_name" column="employee_name"/>
+        <result property="employee_pass" column="employee_pass"/>
+        <association property="dept" column="dept_id" select="com.cjl.dao.DeptMapper.selectDeptByDeptId" javaType="com.cjl.model.Dept"/>
+        <association property="deptPosition" column="deptposition_id" select="com.cjl.dao.DeptPositionMapper.selectDeptpositionByDeptpositionId" javaType="com.cjl.model.DeptPosition"/>
+        <association property="employeeLevel" column="employeeLevel_id" select="com.cjl.dao.EmployeeLevelMapper.selectByEmployeeLevelId" javaType="com.cjl.model.EmployeeLevel"/>
+        <association property="resume" column="resume_id" select="com.cjl.dao.ResumeMapper.selectResumeByResumeId" javaType="com.cjl.model.Resume"/>
+
+    </resultMap>
 </mapper>

@@ -1,5 +1,7 @@
 package com.cjl.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,8 +14,10 @@ public class Interview implements Serializable {
     //对应电子应聘记录
     private Qualification qualification;
     //面试邀请时间
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date interviewCreateTime;
     //面试时间
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date interview_happenTime;
     //面试状态
     //0 创建面试了,但还未有结果,面试对象未响应

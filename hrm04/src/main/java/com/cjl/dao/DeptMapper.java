@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface DeptMapper {
     List<Dept> getAllDept();
+    Dept selectDeptByDeptId(Integer dept_id);
 }

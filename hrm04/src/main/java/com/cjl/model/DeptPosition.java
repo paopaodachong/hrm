@@ -41,4 +41,13 @@ public class DeptPosition implements Serializable {
     public void setDeptPosition_salaryRatio(Double deptPosition_salaryRatio) {
         this.deptPosition_salaryRatio = deptPosition_salaryRatio;
     }
+
+    @Override
+    public String toString() {
+        return "DeptPosition{" +
+                "deptPosition_id=" + deptPosition_id +
+                ", deptPosition_name='" + deptPosition_name + '\'' +
+                ", deptPosition_salaryRatio=" + deptPosition_salaryRatio +
+                '}';
+    }
 }

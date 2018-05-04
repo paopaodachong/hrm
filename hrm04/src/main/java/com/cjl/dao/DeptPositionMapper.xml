@@ -5,4 +5,7 @@
     <select id="getAllDeptPosition" resultType="com.cjl.model.DeptPosition">
         select * from T_DEPTPOSITION
     </select>
+    <select id="selectDeptpositionByDeptpositionId" resultType="com.cjl.model.DeptPosition">
+        SELECT * from T_DEPTPOSITION where DEPTPOSITION_ID = #{deptposition_id}
+    </select>
 </mapper>

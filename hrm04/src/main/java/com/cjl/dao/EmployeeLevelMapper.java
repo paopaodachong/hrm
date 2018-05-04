@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface EmployeeLevelMapper {
     List<EmployeeLevel> getAllEmployeeLevel();
+    EmployeeLevel selectByEmployeeLevelId(Integer employeeLevel_id);
 }

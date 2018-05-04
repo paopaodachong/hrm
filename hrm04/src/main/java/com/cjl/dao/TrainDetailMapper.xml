@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.TrainDetailMapper">
+    <insert id="addTrainDetail">
+        insert into T_TRAINDETAIL (TRAINDEAIL_ID, EMPLOYEE_ID, TRAIN_ID) VALUES (TRAINDETAIL_SEQUENCE.nextval,#{employee.employee_id},#{train.train_id})
+    </insert>
+    <insert id="addTrainDetailByTrainIdAndEmployeeId">
+        insert into T_TRAINDETAIL (TRAINDEAIL_ID, EMPLOYEE_ID, TRAIN_ID) VALUES (TRAINDETAIL_SEQUENCE.nextval,#{employee_id},#{train_id})
+    </insert>
+</mapper>

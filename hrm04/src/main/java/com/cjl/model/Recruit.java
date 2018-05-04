@@ -20,6 +20,7 @@ public class Recruit implements Serializable{
     //招聘描述
     private String recruit_desc;
     //招聘开始日期
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date recruit_startDate;
     //招聘结束日期
     @DateTimeFormat(pattern = "yyyy-mm-dd")

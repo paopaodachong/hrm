@@ -5,4 +5,7 @@
     <select id="getAllEmployeeLevel" resultType="com.cjl.model.EmployeeLevel">
         select * from T_EMPLOYEELEVEL
     </select>
+    <select id="selectByEmployeeLevelId" resultType="com.cjl.model.EmployeeLevel">
+        SELECT * from T_EMPLOYEELEVEL where EMPLOYEELEVEL_ID = #{employeeLevel_id}
+    </select>
 </mapper>

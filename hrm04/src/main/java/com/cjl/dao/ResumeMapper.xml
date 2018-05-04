@@ -4,8 +4,18 @@
     <insert id="addResume">
         insert into T_RESUME (RESUME_ID, VISTOR_ID) VALUES (RESUME_SEQUENCE.nextval,#{vistor_id})
     </insert>
-    <select id="lookResumeByVistorId" resultType="com.cjl.model.Resume">
+    <select id="lookResumeByVistorId" resultMap="ResumeMapping">
         select * from T_RESUME r,VISTOR v,T_IDCARD i,T_EDUCATION e,T_JOBEXP j where r.VISTOR_ID = #{vistor_id}
         and v.VISTOR_ID = #{vistor_id} and i.VISTOR_ID = #{vistor_id} and e.VISTOR_ID = #{vistor_id} AND j.VISTOR_ID = #{vistor_id}
     </select>
+    <select id="selectResumeByResumeId" resultMap="ResumeMapping">
+        select * from T_RESUME where RESUME_ID = #{resume_id}
+    </select>
+    <resultMap id="ResumeMapping" type="com.cjl.model.Resume">
+        <result property="resume_id" column="resume_id"/>
+        <association property="vistor" column="vistor_id" select="com.cjl.dao.VistorMapper.selectVistorById" javaType="com.cjl.model.Vistor"/>
+        <association property="idCard" column="vistor_id" select="com.cjl.dao.IdCardMapper.selectIdCardByVistorId" javaType="com.cjl.model.IdCard"/>
+        <association property="education" column="vistor_id" select="com.cjl.dao.EducationMapper.selectByVistorId" javaType="com.cjl.model.Education"/>
+        <association property="jobExps" column="vistor_id" select="com.cjl.dao.JobExpMapper.selectByVistor_id" />
+    </resultMap>
 </mapper>

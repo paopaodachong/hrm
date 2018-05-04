@@ -73,5 +73,15 @@ public class AdminController {
         return model;
     }
 
+    @RequestMapping("toAddTrain")
+    public String toAddTrain(){
+        return "addTrain";
+    }
 
+    @RequestMapping("addTrain")
+    public String addTrain(Train train,Model model){
+        System.out.println(train);
+        model.addAttribute("message",train);
+        return "test";
+    }
 }

@@ -14,6 +14,7 @@ public class AdminServiceImpl implements AdminService{
     @Resource
     private AdminMapper adminMapper;
 
+
     /**
      * 管理员的登录方法
      * @param admin
@@ -23,4 +24,5 @@ public class AdminServiceImpl implements AdminService{
     public Admin adminLogin(Admin admin) {
         return adminMapper.login(admin);
     }
+
 }

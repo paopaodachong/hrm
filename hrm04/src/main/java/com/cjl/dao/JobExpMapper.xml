@@ -5,7 +5,16 @@
         insert into T_JOBEXP (JOBEXP_ID, JOBEXP_STARTDATE, JOBEXP_ENDDATE, JOBEXP_POSITION, JOBEXP_DESC, JOBEXP_SALARY, VISTOR_ID) VALUES
         (JOBEXP_SENQUENCE.nextval,#{jobExp_startDate},#{jobExp_endDate},#{jobExp_position},#{jobExp_desc},#{jobExp_salary},#{vistor.vistor_id})
     </insert>
-    <select id="selectByVistor_id" resultType="com.cjl.model.JobExp">
+    <select id="selectByVistor_id" resultMap="jobExpMapper">
         select * from T_JOBEXP where VISTOR_ID = #{vistor_id}
     </select>
+    <resultMap id="jobExpMapper" type="com.cjl.model.JobExp">
+        <result property="jobExp_id" column="jobExp_id"/>
+        <result property="jobExp_startDate" column="jobExp_startDate"/>
+        <result property="jobExp_endDate" column="jobExp_endDate"/>
+        <result property="jobExp_desc" column="jobExp_Desc"/>
+        <result property="jobExp_position" column="jobExp_position"/>
+        <result property="jobExp_salary" column="jobExp_salary"/>
+        <association property="vistor" column="vistor_id" select="com.cjl.dao.VistorMapper.selectVistorById"/>
+    </resultMap>
 </mapper>

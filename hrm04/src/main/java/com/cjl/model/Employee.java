@@ -74,4 +74,17 @@ public class Employee {
     public void setEmployee_pass(String employee_pass) {
         this.employee_pass = employee_pass;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employee_id=" + employee_id +
+                ", employee_name='" + employee_name + '\'' +
+                ", employee_pass='" + employee_pass + '\'' +
+                ", dept=" + dept +
+                ", deptPosition=" + deptPosition +
+                ", employeeLevel=" + employeeLevel +
+                ", resume=" + resume +
+                '}';
+    }
 }

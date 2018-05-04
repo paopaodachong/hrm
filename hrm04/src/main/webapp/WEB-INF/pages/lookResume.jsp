@@ -18,8 +18,6 @@
     <title></title>
 </head>
 <body>
-
-${resume}
     <div>
         <h3>个人信息展示</h3>
         <table>
@@ -82,7 +80,5 @@ ${resume}
                 </c:forEach>
         </table>
     </div>
-
-
 </body>
 </html>

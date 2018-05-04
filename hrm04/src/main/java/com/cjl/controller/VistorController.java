@@ -135,21 +135,8 @@ public class VistorController {
     @RequestMapping("/lookResume")
     public String lookResume(HttpSession httpSession, Model model){
         Vistor vistor = (Vistor) httpSession.getAttribute("vistor");
-
         Resume resume = resumeService.lookResumeByVistorId(vistor.getVistor_id());
-        Vistor vistor1 = vistorServicec.selectById(vistor.getVistor_id());
-        IdCard idCard = idCardService.selectIdCardByVistorId(vistor.getVistor_id());
-        Education education = educationService.selectByVistorId(vistor.getVistor_id());
-        List<JobExp> jobExps = jobExpService.selectByVistorId(vistor.getVistor_id());
 
-
-        resume.setVistor(vistor1);
-        resume.setIdCard(idCard);
-        System.out.println(idCard);
-        resume.setEducation(education);
-        resume.setJobExps(jobExps);
-
-        System.out.println(resume);
         model.addAttribute("resume",resume);
         return "lookResume";
     }

@@ -16,10 +16,9 @@ public class Train implements Serializable {
     private String train_theme;
     //培训详情
     private String train_desc;
-    //培训与员工的一对多关系
-    private List<Employee> train_employees;
+
     //培训开始时间
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date train_startDate;
     //培训地点
     private String train_address;
@@ -49,14 +48,6 @@ public class Train implements Serializable {
 
     public void setTrain_desc(String train_desc) {
         this.train_desc = train_desc;
-    }
-
-    public List<Employee> getTrain_employees() {
-        return train_employees;
-    }
-
-    public void setTrain_employees(List<Employee> train_employees) {
-        this.train_employees = train_employees;
     }
 
     public Date getTrain_startDate() {

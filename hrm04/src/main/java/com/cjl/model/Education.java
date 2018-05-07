@@ -16,7 +16,7 @@ public class Education {
     //专业名称
     private String edu_majorName;
     //入学日期
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date edu_startTime;
     //学制
     //全日制,自考,成人大学

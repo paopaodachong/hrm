@@ -37,4 +37,5 @@ public class TrainDetail implements Serializable {
         this.employee = employee;
     }
 
+
 }

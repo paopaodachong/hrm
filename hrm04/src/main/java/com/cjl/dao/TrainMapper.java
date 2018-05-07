@@ -7,4 +7,6 @@ import com.cjl.model.Train;
  */
 public interface TrainMapper {
     boolean addTrain(Train train);
+    Integer getIdByTrain(Train train);
+    Train selectTrainByTrainId(Integer trainId);
 }

@@ -12,10 +12,10 @@ public class JobExp {
     //工作经验的序列号
     private Integer jobExp_id;
     //工作经验的开始时间
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date jobExp_startDate;
     //工作经验的结束时间
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date jobExp_endDate;
     //担任职务
     private String jobExp_position;

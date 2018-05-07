@@ -36,6 +36,8 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+
+
     <!--事务增强，方法通配-->
     <tx:advice id="interceptor" transaction-manager="transactionManager">
         <tx:attributes>

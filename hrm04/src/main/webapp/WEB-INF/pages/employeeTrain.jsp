@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 陈佳乐
@@ -16,6 +17,12 @@
     <title>员工培训页面</title>
 </head>
 <body>
-
+    <h3>全部培训</h3>
+    <c:forEach var="trainDetail" items="${trainDetails}">
+        培训主题:<c:out value="${trainDetail.train.train_theme}"/><br>
+        培训时间:<c:out value="${trainDetail.train.train_startDate}"/><br>
+        培训地点:<c:out value="${trainDetail.train.train_address}"/><br>
+        培训描述:<c:out value="${trainDetail.train.train_desc}"/><br>
+    </c:forEach>
 </body>
 </html>

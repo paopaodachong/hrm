@@ -16,7 +16,7 @@
     <title></title>
 </head>
 <body>
-    嚯嚯嚯
+    ${message}
     <h3><a href="getAll">查看当前部门/部门职位/职工等级设置</a></h3>
     <h3><a href="toAddTrain">添加培训</a> </h3>
 </body>

@@ -2,11 +2,14 @@ package com.cjl.controller;
 
 import com.cjl.biz.*;
 import com.cjl.model.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -73,15 +76,61 @@ public class AdminController {
         return model;
     }
 
+    @Resource
+    private EmployeeService employeeService;
+    @Resource
+    private TrainService trainService;
+    @Resource
+    private TrainDetailService trainDetailService;
     @RequestMapping("toAddTrain")
-    public String toAddTrain(){
+    public String toAddTrain(HttpSession session,Model model){
+        //获取部门及员工信息
+        List<Dept> depts = deptService.getAllDept();
+        List<Employee> employees = employeeService.getAllEmployee();
+        List<String> deptNames = new ArrayList<>();
+        for (Dept dept:depts){
+            String str = dept.getDept_name();
+
+            deptNames.add(str);
+
+        }
+        model.addAttribute("depts",depts);
+        model.addAttribute("deptNames",deptNames);
+        model.addAttribute("employees",employees);
         return "addTrain";
     }
 
     @RequestMapping("addTrain")
-    public String addTrain(Train train,Model model){
-        System.out.println(train);
-        model.addAttribute("message",train);
-        return "test";
+    public String addTrain(Train train, Model model, @Param("dept")String dept){
+        //获取部门所有人员
+        String message = "添加人员";
+        List<Employee> employees = employeeService.getEmployeesByDeptname(dept);
+        System.out.println(employees);
+        //添加培训
+
+        Integer train_id = trainService.getIdByTrain(train);
+        System.out.println("train_id"+train_id);
+        if (null == train_id){
+            trainService.addTrain(train);
+            train_id = trainService.getIdByTrain(train);
+        }else {
+            message = "相关培训已经存在,无法添加培训,经查看可添加";
+        }
+
+        //  添加培训相关人员
+
+        train.setTrain_id(train_id);
+        Integer i = 0;
+        for (Employee employee :employees){
+            i= i +1;
+            System.out.println(employee.getEmployee_id());
+            System.out.println(train_id);
+            trainDetailService.addTrainDetaiByTrain(train,employee);
+        }
+        message = message+i+"人";
+
+
+        model.addAttribute("message",message);
+        return "adminSuccess";
     }
 }

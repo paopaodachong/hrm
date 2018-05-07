@@ -4,6 +4,15 @@
     <select id="loginEmployee" resultMap="employeeMapper">
         select * from T_EMPLOYEE where EMPLOYEE_NAME = #{employee_name} and EMPLOYEE_PASS = #{employee_pass}
     </select>
+    <select id="getAllEmployees" resultMap="employeeMapper">
+        SELECT * from T_EMPLOYEE
+    </select>
+    <select id="getEmployeesByDeptName" resultMap="employeeMapper">
+        select * from T_EMPLOYEE where DEPT_ID = (select dept_id from T_DEPT WHERE T_DEPT.DEPT_NAME = #{deptname})
+    </select>
+    <select id="selectEmployeeByEmployeeId" resultMap="employeeMapper">
+        SELECT * from T_EMPLOYEE WHERE EMPLOYEE_ID = #{employeeId}
+    </select>
 
     <resultMap id="employeeMapper" type="com.cjl.model.Employee">
         <result property="employee_id" column="employee_id" />

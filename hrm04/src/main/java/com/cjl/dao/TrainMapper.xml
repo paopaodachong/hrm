@@ -5,4 +5,11 @@
         insert into T_TRAIN (TRAIN_ID, TRAIN_THEME, TRAIN_DESC, TRAIN_STARTDATE, TRAIN_ADDRESS) VALUES
         (TRAIN_SEQUENCE.nextval,#{train_theme},#{train_desc},#{train_startDate},#{train_address})
     </insert>
+    <select id="getIdByTrain" resultType="java.lang.Integer">
+        SELECT TRAIN_ID FROM T_TRAIN where TRAIN_THEME = #{train_theme} and train_startDate = #{train_startDate} and train_desc
+        = #{train_desc} and train_address = #{train_address}
+    </select>
+    <select id="selectTrainByTrainId" resultType="com.cjl.model.Train">
+        SELECT * from T_TRAIN where TRAIN_ID = #{trainId}
+    </select>
 </mapper>

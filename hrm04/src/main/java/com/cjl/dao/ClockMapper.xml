@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.ClockMapper">
+    <insert id="addNewClock">
+        insert into T_CLOCK (CLOCK_ID, CLOCK_INDATE, CLOCK_STATE, EMPLOYEE_ID) VALUES (CLOCK_SEQUENCE.nextval,#{clock_inDate},#{clock_state},#{employee.employee_id})
+    </insert>
+    <insert id="addNewClockOnlyOff">
+        INSERT into T_CLOCK (CLOCK_ID, CLOCK_OFFDATE, CLOCK_STATE, EMPLOYEE_ID) VALUES (CLOCK_SEQUENCE.nextval,#{clock_offDate},#{clock_state},#{employee.employee_id})
+    </insert>
+    <update id="updateOffDateClock">
+        update T_CLOCK set CLOCK_OFFDATE = sysdate ,CLOCK_STATE =#{clock_state} where CLOCK_ID = #{clock_id}
+    </update>
+    <select id="getCurrentSameDayClock" resultMap="clockMapper">
+        SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and trunc(clock_indate) = trunc(sysdate)
+    </select>
+
+
+
+    <resultMap id="clockMapper" type="com.cjl.model.Clock">
+        <result property="clock_id" column="clock_id" jdbcType="NUMERIC"/>
+        <result property="clock_inDate" column="clock_inDate"/>
+        <result property="clock_offDate" column="clock_offDate"/>
+        <result property="clock_state" column="clock_state" jdbcType="NUMERIC"/>
+        <association property="employee" column="employee_id" select="com.cjl.dao.EmployeeMapper.selectEmployeeByEmployeeId"/>
+    </resultMap>
+</mapper>

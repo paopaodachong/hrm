@@ -7,4 +7,17 @@
     <insert id="addTrainDetailByTrainIdAndEmployeeId">
         insert into T_TRAINDETAIL (TRAINDEAIL_ID, EMPLOYEE_ID, TRAIN_ID) VALUES (TRAINDETAIL_SEQUENCE.nextval,#{employee_id},#{train_id})
     </insert>
+    <insert id="addTrainDetailByTrain">
+        insert into T_TRAINDETAIL (TRAINDEAIL_ID, EMPLOYEE_ID, TRAIN_ID) VALUES (TRAINDETAIL_SEQUENCE.nextval,#{1.employee_id},#{0.train_id})
+    </insert>
+    <select id="getTrainDetailByEmployeeId" resultMap="trainDetailMapper">
+        SELECT  * from T_TRAINDETAIL where EMPLOYEE_ID = #{employeeId}
+    </select>
+
+    <resultMap id="trainDetailMapper" type="com.cjl.model.TrainDetail">
+        <result property="trainDetail_id" column="trainDetail_id" />
+        <association property="train" column="train_id" select="com.cjl.dao.TrainMapper.selectTrainByTrainId" />
+        <association property="employee" column="employee_id" select="com.cjl.dao.EmployeeMapper.selectEmployeeByEmployeeId"/>
+    </resultMap>
+
 </mapper>

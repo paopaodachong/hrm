@@ -1,11 +1,9 @@
 package com.cjl.controller;
 
-import com.cjl.biz.ClockService;
-import com.cjl.biz.ClockServiceImpl;
-import com.cjl.biz.EmployeeService;
-import com.cjl.biz.TrainDetailService;
+import com.cjl.biz.*;
 import com.cjl.model.Clock;
 import com.cjl.model.Employee;
+import com.cjl.model.Reward;
 import com.cjl.model.TrainDetail;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -92,14 +90,23 @@ public class EmployeeController {
         model.addAttribute("trainDetails",trainDetails);
         return "employeeTrain";
     }
-
-
+    @Resource
+    private RewardService rewardService;
     /**
      * 跳转至公司员工奖惩信息的方法
+     * 需要提前传入参数
      * @return
      */
     @RequestMapping("/toEmployeeReward")
-    public String toEmployeeReward(){
+    public String toEmployeeReward(HttpSession httpSession,Model model){
+        //获取session中的employee数据
+        Employee employee = (Employee) httpSession.getAttribute("employee");
+
+        List<Reward> rewards = rewardService.getAllRewardsByEmployee(employee);
+
+        model.addAttribute("rewards",rewards);
+
+
         return "employeeReward";
     }
 

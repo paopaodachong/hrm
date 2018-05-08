@@ -30,7 +30,7 @@
 <body>
     <div>${message}</div>
     <div id="clockIn">
-        <div id="inTimer" style="font:11px Tahoma;height:10px"></div><br>
+        <div id="inTimer" style="font:44px Tahoma;height:40px"></div><br>
         <span>上班时间09:00</span><br>
         <div id="inTimerInput">
             <form action="clockIn" method="post">
@@ -42,7 +42,8 @@
     </div>
     <div>${message1}</div>
     <div id="clockOff">
-        <div id="offTimer" style="font:11px Tahoma;height:10px"></div><br>
+        <div id="offTimer" style="font:44px Tahoma;height:40px"></div><br>
+        <span>下班时间18:00</span><br>
         <div id="offTimerInput">
             <form method="post" action="clockOff">
 
@@ -52,5 +53,6 @@
         </div>
 
     </div>
+    <span>返回<a href="toEmployeeSuccess">个人主页面</a></span>
 </body>
 </html>

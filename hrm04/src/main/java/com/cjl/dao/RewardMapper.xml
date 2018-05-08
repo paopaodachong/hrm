@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.RewardMapper">
+    <insert id="addRewardMapper">
+        insert into T_REWARD (REWARD_ID, REWARD_DATE, REWARD_NAME, REWARD_DESC, REWARD_MONEY, EMPLOYEE_ID) VALUES
+        (REWARD_SEQUENCE.nextval,#{reward_date},#{reward_name},#{reward_desc},#{reward_money},#{employee.employee_id})
+    </insert>
+    <select id="getAllRewardsByEmployee" resultMap="rewardMapper">
+        select * from T_REWARD where EMPLOYEE_ID = #{employee_id}
+    </select>
+    <resultMap id="rewardMapper" type="com.cjl.model.Reward">
+        <result property="reward_id" column="reward_id"/>
+        <result property="reward_date" column="reward_date"/>
+        <result property="reward_name" column="reward_name"/>
+        <result property="reward_desc" column="reward_desc"/>
+        <result property="reward_money" column="reward_money"/>
+        <association property="employee" column="employee_id" select="com.cjl.dao.EmployeeMapper.selectEmployeeByEmployeeId"/>
+    </resultMap>
+</mapper>

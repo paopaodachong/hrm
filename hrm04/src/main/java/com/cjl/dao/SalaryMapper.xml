@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cjl.dao.SalaryMapper">
+    <insert id="addSalaryByDetails">
+        insert into T_SALARY (SALARY_ID, SALARY_MONEY, EMPLOYEE_ID, PERFORMANCESALARY_ID,SALARY_CREATEDATE) VALUES
+        (SALARY_SEQUENCE.nextval,#{0},#{1.employee_id},#{2.performanceSalary_id},sysdate)
+    </insert>
+    <select id="selectCurrentMonthSalary" resultType="com.cjl.model.Salary">
+        select * from T_SALARY where to_char(SALARY_CREATEDATE,'yyyyMM')=to_char(sysdate,'yyyyMM')
+    </select>
+    <select id="selectCurrentMonthSalaryByEmployee" resultType="com.cjl.model.Salary">
+        select * from T_SALARY where to_char(SALARY_CREATEDATE,'yyyyMM')=to_char(sysdate,'yyyyMM') and EMPLOYEE_ID = #{employee_id}
+    </select>
+
+
+    <resultMap id="salaryMapper" type="com.cjl.model.Salary">
+        <result property="salary_id" column="salary_id"/>
+        <result property="salary_money" column="salary_money"/>
+        <result property="salary_createDate" column="salary_createDate"/>
+        <association property="employee" column="employee_id" select="com.cjl.dao.EmployeeMapper.selectEmployeeByEmployeeId"/>
+        <association property="performanceSalary" column="performanceSalary_id" select="com.cjl.dao.PerformanceSalaryMapper.selectPfsByPfsId"/>
+    </resultMap>
 </mapper>

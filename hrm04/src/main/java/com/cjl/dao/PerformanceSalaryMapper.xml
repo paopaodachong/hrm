@@ -12,4 +12,7 @@
     <select id="getThisMonthPfs" resultType="com.cjl.model.PerformanceSalary">
         select * from T_PERFORMANCESALARY where to_char(PERFORMANCESALARY_CREATEDATE,'yyyyMM') = to_char(sysdate,'yyyyMM')
     </select>
+    <select id="selectPfsByPfsId" resultType="com.cjl.model.PerformanceSalary">
+        SELECT * from T_PERFORMANCESALARY where PERFORMANCESALARY_ID = #{PfsId}
+    </select>
 </mapper>

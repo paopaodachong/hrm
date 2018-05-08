@@ -1,5 +1,7 @@
 package com.cjl.model;
 
+import java.util.Date;
+
 /**
  * Created by 陈佳乐 on 2018/5/8.
  */
@@ -9,9 +11,26 @@ public class Salary {
     //可以查看基本工资
     //可以查看加班费用
     private Employee employee;
+    private Date salary_createDate;
     private PerformanceSalary performanceSalary;
 
     public Salary() {
+    }
+
+    public Salary(Integer salary_id, Double salary_money, Employee employee, Date salary_createDate, PerformanceSalary performanceSalary) {
+        this.salary_id = salary_id;
+        this.salary_money = salary_money;
+        this.employee = employee;
+        this.salary_createDate = salary_createDate;
+        this.performanceSalary = performanceSalary;
+    }
+
+    public Date getSalary_createDate() {
+        return salary_createDate;
+    }
+
+    public void setSalary_createDate(Date salary_createDate) {
+        this.salary_createDate = salary_createDate;
     }
 
     public Integer getSalary_id() {

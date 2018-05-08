@@ -14,4 +14,5 @@ public interface PerformanceSalaryMapper {
 
     boolean updatePfs(PerformanceSalary performanceSalary);
 
+    PerformanceSalary selectPfsByPfsId(Integer PfsId);
 }

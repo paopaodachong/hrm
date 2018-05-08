@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8e7548-eda8-4e80-9ec0-b187940d125f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAndShowAllSalary.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockService.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/PerformanceSalaryService.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/PerformanceSalaryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/PerformanceSalaryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/PerformanceSalaryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardService.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryService.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminSuccess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminSuccess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/changePerformanceSalary.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/changePerformanceSalary.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -147,6 +131,50 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SCOTT" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="T_EMPLOYEE" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SCOTT" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="T_CLOCK" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -157,8 +185,8 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+            <state relative-caret-position="426">
+              <caret line="291" column="37" lean-forward="true" selection-start-line="291" selection-start-column="37" selection-end-line="291" selection-end-column="37" />
               <folding>
                 <element signature="e#1039#1040#0" expanded="true" />
               </folding>
@@ -166,107 +194,122 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addAndShowAllSalary.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAndShowAllSalary.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+      <file leaf-file-name="SCOTT.T_EMPLOYEE" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/454aaec5/3ca2e4c6-c0ca-4148-86ff-830a0972331a/SCOTT.T_EMPLOYEE">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminSuccess.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminSuccess.jsp">
+      <file leaf-file-name="ClockMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="265">
+              <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClockMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="19" column="179" lean-forward="false" selection-start-line="19" selection-start-column="179" selection-end-line="19" selection-end-column="179" />
+              <folding>
+                <marker date="1525773753317" expanded="true" signature="232:389" ph="insert into T_CLOCK... " />
+                <marker date="1525773753317" expanded="true" signature="449:608" ph="INSERT into T_CLOCK... " />
+                <marker date="1525773753317" expanded="true" signature="668:768" ph="update T_CLO... " />
+                <marker date="1525773753317" expanded="true" signature="856:953" ph="SELECT * fro... T_CLOCK" />
+                <marker date="1525773753317" expanded="true" signature="1061:1196" ph="SELECT * fro... T_CLOCK" />
+                <marker date="1525773753317" expanded="true" signature="1061:1226" ph="SELECT * fro... T_CLOCK" />
+                <marker date="1525773753317" expanded="true" signature="1334:1469" ph="SELECT * fro... T_CLOCK" />
+                <marker date="1525773753317" expanded="true" signature="1334:1506" ph="SELECT * fro... T_CLOCK" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/controller/EmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3125">
+            <state relative-caret-position="-2535">
               <caret line="174" column="72" lean-forward="false" selection-start-line="174" selection-start-column="64" selection-end-line="174" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changePerformanceSalary.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/changePerformanceSalary.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+      <file leaf-file-name="SCOTT.T_SALARY" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/454aaec5/3ca2e4c6-c0ca-4148-86ff-830a0972331a/SCOTT.T_SALARY">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalaryMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.java">
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/model/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="156">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PerformanceSalaryMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1525763053596" expanded="true" signature="242:488" ph="insert into T_PERFORMANCESALARY... " />
+                <marker date="1525763053596" expanded="true" signature="539:734" ph="update T_PER... " />
+                <marker date="1525763053596" expanded="true" signature="836:950" ph="select * fro... T_PERFORMANCESALARY" />
+                <marker date="1525763053596" expanded="true" signature="1053:1124" ph="SELECT * fro... T_PERFORMANCESALARY" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalaryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryService.java">
+      <file leaf-file-name="RewardMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="275">
+              <caret line="11" column="109" lean-forward="true" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1525771065502" expanded="true" signature="237:461" ph="insert into T_REWARD... " />
+                <marker date="1525771065502" expanded="true" signature="551:608" ph="select * fro... T_REWARD" />
+                <marker date="1525771065502" expanded="true" signature="704:840" ph="select * fro... T_REWARD" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalaryServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryServiceImpl.java">
+      <file leaf-file-name="ClockServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="32" column="44" lean-forward="false" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1011#1012#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SalaryMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-              <folding>
-                <marker date="1525770179355" expanded="true" signature="240:436" ph="insert into T_SALARY... " />
-                <marker date="1525770179355" expanded="true" signature="490:571" ph="UPDATE T_SAL... " />
-                <marker date="1525770179355" expanded="true" signature="662:752" ph="select * fro... T_SALARY" />
-                <marker date="1525770179355" expanded="true" signature="853:976" ph="select * fro... T_SALARY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RewardServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="145">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -334,20 +377,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/changePerformanceSalary.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/RewardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/SalaryMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cjl/biz/SalaryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminSuccess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAndShowAllSalary.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java" />
       </list>
     </option>
   </component>
@@ -379,7 +422,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
+    <option name="x" value="7" />
     <option name="y" value="14" />
     <option name="width" value="1440" />
     <option name="height" value="828" />
@@ -1213,7 +1256,7 @@
       <workItem from="1524626823026" duration="70013000" />
       <workItem from="1525223422269" duration="26161000" />
       <workItem from="1525268805023" duration="5852000" />
-      <workItem from="1525278510236" duration="122257000" />
+      <workItem from="1525278510236" duration="127123000" />
     </task>
     <task id="LOCAL-00001" summary="工程创建">
       <created>1524207269718</created>
@@ -1439,11 +1482,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525763064733</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="招聘微调">
+      <created>1525770203715</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1525770203715</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277329000" />
+    <option name="totallyTimeSpent" value="282195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1455,7 +1505,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="14" width="1440" height="828" extended-state="0" />
+    <frame x="7" y="14" width="1440" height="828" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1465,7 +1515,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.09899569" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="2298" y="34" width="419" height="735" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.09899569" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="684" y="86" width="419" height="735" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964131" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.106886655" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1476,8 +1526,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32060027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13976945" sideWeight="0.48995695" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31650752" sideWeight="0.4878049" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13976945" sideWeight="0.48995695" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17146975" sideWeight="0.4878049" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32742155" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32742155" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22391304" sideWeight="0.8104839" order="7" side_tool="false" content_ui="combo" x="50" y="119" width="136" height="733" />
@@ -1579,22 +1629,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/EmployeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/model/Resume.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/model/Recruit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1805,32 +1839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/454aaec5/3ca2e4c6-c0ca-4148-86ff-830a0972331a/SCOTT.T_SALARY">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-          <folding>
-            <marker date="1525763053596" expanded="true" signature="242:488" ph="insert into T_PERFORMANCESALARY... " />
-            <marker date="1525763053596" expanded="true" signature="539:734" ph="update T_PER... " />
-            <marker date="1525763053596" expanded="true" signature="836:950" ph="select * fro... T_PERFORMANCESALARY" />
-            <marker date="1525763053596" expanded="true" signature="1053:1124" ph="SELECT * fro... T_PERFORMANCESALARY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/model/Salary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1862,7 +1870,7 @@
         <state relative-caret-position="289">
           <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1902,32 +1910,7 @@
         <state relative-caret-position="550">
           <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="19" column="189" lean-forward="false" selection-start-line="19" selection-start-column="189" selection-end-line="19" selection-end-column="189" />
-          <folding>
-            <marker date="1525767829457" expanded="true" signature="232:389" ph="insert into T_CLOCK... " />
-            <marker date="1525767829457" expanded="true" signature="449:608" ph="INSERT into T_CLOCK... " />
-            <marker date="1525767829457" expanded="true" signature="668:768" ph="update T_CLO... " />
-            <marker date="1525767829457" expanded="true" signature="856:953" ph="SELECT * fro... T_CLOCK" />
-            <marker date="1525767829457" expanded="true" signature="1061:1238" ph="SELECT * fro... T_CLOCK" />
-            <marker date="1525767829457" expanded="true" signature="1346:1530" ph="SELECT * fro... T_CLOCK" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1937,29 +1920,6 @@
         <state relative-caret-position="333">
           <caret line="23" column="69" lean-forward="false" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-          <folding>
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <marker date="1525768219754" expanded="true" signature="237:461" ph="insert into T_REWARD... " />
-            <marker date="1525768219754" expanded="true" signature="551:608" ph="select * fro... T_REWARD" />
-            <marker date="1525768219754" expanded="true" signature="704:850" ph="select * fro... T_REWARD" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2004,7 +1964,7 @@
         <state relative-caret-position="262">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2044,14 +2004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3125">
-          <caret line="174" column="72" lean-forward="false" selection-start-line="174" selection-start-column="64" selection-end-line="174" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminSuccess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -2060,20 +2012,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAndShowAllSalary.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/biz/ClockServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/PerformanceSalaryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+          <folding>
+            <marker date="1525763053596" expanded="true" signature="242:488" ph="insert into T_PERFORMANCESALARY... " />
+            <marker date="1525763053596" expanded="true" signature="539:734" ph="update T_PER... " />
+            <marker date="1525763053596" expanded="true" signature="836:950" ph="select * fro... T_PERFORMANCESALARY" />
+            <marker date="1525763053596" expanded="true" signature="1053:1124" ph="SELECT * fro... T_PERFORMANCESALARY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/model/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/RewardMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="109" lean-forward="true" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
+          <folding>
+            <marker date="1525771065502" expanded="true" signature="237:461" ph="insert into T_REWARD... " />
+            <marker date="1525771065502" expanded="true" signature="551:608" ph="select * fro... T_REWARD" />
+            <marker date="1525771065502" expanded="true" signature="704:840" ph="select * fro... T_REWARD" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/454aaec5/3ca2e4c6-c0ca-4148-86ff-830a0972331a/SCOTT.T_SALARY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="19" column="179" lean-forward="false" selection-start-line="19" selection-start-column="179" selection-end-line="19" selection-end-column="179" />
+          <folding>
+            <marker date="1525773753317" expanded="true" signature="232:389" ph="insert into T_CLOCK... " />
+            <marker date="1525773753317" expanded="true" signature="449:608" ph="INSERT into T_CLOCK... " />
+            <marker date="1525773753317" expanded="true" signature="668:768" ph="update T_CLO... " />
+            <marker date="1525773753317" expanded="true" signature="856:953" ph="SELECT * fro... T_CLOCK" />
+            <marker date="1525773753317" expanded="true" signature="1061:1196" ph="SELECT * fro... T_CLOCK" />
+            <marker date="1525773753317" expanded="true" signature="1061:1226" ph="SELECT * fro... T_CLOCK" />
+            <marker date="1525773753317" expanded="true" signature="1334:1469" ph="SELECT * fro... T_CLOCK" />
+            <marker date="1525773753317" expanded="true" signature="1334:1506" ph="SELECT * fro... T_CLOCK" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/dao/ClockMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/454aaec5/3ca2e4c6-c0ca-4148-86ff-830a0972331a/SCOTT.T_EMPLOYEE">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+        <state relative-caret-position="426">
+          <caret line="291" column="37" lean-forward="true" selection-start-line="291" selection-start-column="37" selection-end-line="291" selection-end-column="37" />
           <folding>
             <element signature="e#1039#1040#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAndShowAllSalary.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cjl/controller/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        <state relative-caret-position="-2535">
+          <caret line="174" column="72" lean-forward="false" selection-start-line="174" selection-start-column="64" selection-end-line="174" selection-end-column="72" />
           <folding />
         </state>
       </provider>

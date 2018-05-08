@@ -213,30 +213,38 @@ public class AdminController {
                 Salary salary = salaryService.selectCurrentMonthSalaryByEmployee(employee);
                 //基本薪资
                 double baseSalry = (employee.getDept().getDept_baseSalary()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                System.out.println("基本薪资"+baseSalry);
                 //绩效薪资
                 double pfSalary = (performanceSalary.getPerformanceSalary_money()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                System.out.println("绩效薪资"+pfSalary);
                 //加班工资
                 //1计算工作天数
                 double moreWorkSalary = 0;
                 int normalDays = clockService.getLastMonthNormalClockByEmployee(employee).size();
                 int onworkDays = clockService.getLastMonthOnworkClockByEmployee(employee).size();
+                System.out.println("正常打卡天数"+normalDays);
+                System.out.println("加迟到打卡天数"+onworkDays);
                 if (onworkDays >= 22) {
-                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                    moreWorkSalary = baseSalry * (onworkDays - 22)/22;
                 } else {
                     //2计算旷工扣除钱数
-                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                    moreWorkSalary = baseSalry * (onworkDays - 22)/22;
                 }
+                System.out.println("加班费"+moreWorkSalary);
                 //计算迟到早退钱数
-                double lazyWorkSalary = (normalDays - onworkDays) * 100;
-
+                double lazyWorkSalary = (normalDays - onworkDays) * 50;
+                System.out.println("迟到早退扣除钱"+lazyWorkSalary);
                 //奖惩费用
                 List<Reward> rewards = rewardService.getLastMonthRewardsByEmployee(employee);
                 double rewardsSalary = 0;
                 for (Reward reward : rewards) {
                     rewardsSalary = rewardsSalary + reward.getReward_money();
                 }
+                System.out.println("各项奖赏的钱"+rewardsSalary);
                 //社保应发工资0.2
+
                 double securitySalary = 0.2 * (baseSalry + pfSalary + moreWorkSalary + rewardsSalary);
+                System.out.println("社保"+securitySalary);
                 //计算得到薪资
                 double salary_money = baseSalry + pfSalary + moreWorkSalary + rewardsSalary - securitySalary;
                 //加入薪资表中
@@ -257,13 +265,13 @@ public class AdminController {
                 int normalDays = clockService.getLastMonthNormalClockByEmployee(employee).size();
                 int onworkDays = clockService.getLastMonthOnworkClockByEmployee(employee).size();
                 if (onworkDays >= 22) {
-                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                    moreWorkSalary = baseSalry * (onworkDays - 22)/22;
                 } else {
                     //2计算旷工扣除钱数
-                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                    moreWorkSalary = baseSalry * (onworkDays - 22)/22;
                 }
                 //计算迟到早退钱数
-                double lazyWorkSalary = (normalDays - onworkDays) * 100;
+                double lazyWorkSalary = (normalDays - onworkDays) * 50;
 
                 //奖惩费用
                 List<Reward> rewards = rewardService.getLastMonthRewardsByEmployee(employee);

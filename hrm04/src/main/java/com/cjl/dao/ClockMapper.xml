@@ -14,10 +14,10 @@
         SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and trunc(clock_indate) = trunc(sysdate)
     </select>
     <select id="getLastMonthNormalClockByEmployee" resultType="com.cjl.model.Clock">
-        SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and to_char(clock_offdate,'yyyyMM') = to_char(LAST_DAY(ADD_MONTHS(SYSDATE, -1)), 'yyyyMM') and Clock_state in {3,4,8,12}
+        SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and to_char(clock_indate,'yyyyMM') = to_char(add_months(SYSDATE,-1), 'yyyyMM') and Clock_state in (3,4,8,12)
     </select>
     <select id="getLastMonthOnworkClockByEmployee" resultType="com.cjl.model.Clock">
-        SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and to_char(clock_offdate,'yyyyMM') = to_char(LAST_DAY(ADD_MONTHS(SYSDATE, -1)), 'yyyyMM') and Clock_state in {3,4,5,8,9,13,12}
+        SELECT * from T_CLOCK WHERE EMPLOYEE_ID = #{employee_id} and to_char(clock_indate,'yyyyMM') = to_char(add_months(SYSDATE,-1), 'yyyyMM') and Clock_state in (3,4,5,8,9,12,13)
     </select>
 
 

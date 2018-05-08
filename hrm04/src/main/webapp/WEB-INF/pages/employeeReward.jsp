@@ -19,7 +19,6 @@
 </head>
 <body>
     <div>${message}</div>
-    <div>${rewards}</div>
     <h3>${sessionScope.employee.employee_name}员工奖惩明细</h3>
     <table>
         <thead>

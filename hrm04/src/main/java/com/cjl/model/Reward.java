@@ -15,7 +15,7 @@ public class Reward implements Serializable{
     //奖惩描述
     private String reward_desc;
     //奖惩钱
-    private double reward_money;
+    private Double reward_money;
     //奖惩人
     private Employee employee;
 

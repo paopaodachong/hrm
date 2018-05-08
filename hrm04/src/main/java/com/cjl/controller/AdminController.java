@@ -36,6 +36,10 @@ public class AdminController {
         }
 
     }
+    @RequestMapping("toAdminSuccess")
+    public String toAdminSuccess(){
+        return "adminSuccess";
+    }
     @Resource
     private DeptService deptService;
     @Resource
@@ -82,7 +86,7 @@ public class AdminController {
     private TrainService trainService;
     @Resource
     private TrainDetailService trainDetailService;
-    @RequestMapping("toAddTrain")
+    @RequestMapping("/toAddTrain")
     public String toAddTrain(HttpSession session,Model model){
         //获取部门及员工信息
         List<Dept> depts = deptService.getAllDept();
@@ -100,7 +104,7 @@ public class AdminController {
         return "addTrain";
     }
 
-    @RequestMapping("addTrain")
+    @RequestMapping("/addTrain")
     public String addTrain(Train train, Model model, @Param("dept")String dept){
         //获取部门所有人员
         String message = "添加人员";
@@ -133,4 +137,53 @@ public class AdminController {
         model.addAttribute("message",message);
         return "adminSuccess";
     }
+
+
+
+
+    @Resource
+    private PerformanceSalaryService performanceSalaryService;
+    @RequestMapping("/toAddPerformanceSalary")
+    public String toAddPerformanceSalary(Model model){
+        List<PerformanceSalary> performanceSalaries = performanceSalaryService.getThisMonthPfs();
+        if (null==performanceSalaries||performanceSalaries.size()==0){
+
+            return "addPerformanceSalary";
+        }else{
+            model.addAttribute("performanceSalaries",performanceSalaries);
+            return "changePerformanceSalary";
+        }
+
+    }
+
+
+    /**
+     * 添加全新的绩效奖金
+     * @param performanceSalary
+     * @param model
+     * @return
+     */
+    @RequestMapping("/addPerformanceSalary")
+    public String addPerformanceSalary(PerformanceSalary performanceSalary,Model model){
+        String message = "进入绩效奖金添加环节"+performanceSalary.getPerformanceSalary_money()+performanceSalary.getPerformanceSalary_desc();
+
+        if (performanceSalaryService.addNewPerformanceSalary(performanceSalary)) {
+            message = message +"添加成功了";
+        }
+        model.addAttribute("message",message);
+        return "addPerformanceSalary";
+    }
+    @RequestMapping("/changePerformanceSalary")
+    public String changePerformanceSalary(PerformanceSalary performanceSalary,Model model){
+        String message = "更新失败了";
+        if (performanceSalaryService.updatePfs(performanceSalary)){
+            message = "更新成功了";
+
+        }
+        model.addAttribute("message",message);
+        return "changePerformanceSalary";
+    }
+
+
+
 }

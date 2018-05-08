@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.PerformanceSalaryMapper">
+    <insert id="addNewPfs">
+        insert into T_PERFORMANCESALARY (PERFORMANCESALARY_ID, PERFORMANCESALARY_MONEY, PERFORMANCESALARY_CREATEDATE, PERFORMANCESALARY_DESC) VALUES
+        (PERFORMANCESALARY_SEQUENCE.nextval,#{performanceSalary_money},sysdate,#{performanceSalary_desc})
+    </insert>
+    <update id="updatePfs">
+        update T_PERFORMANCESALARY SET PERFORMANCESALARY_MONEY = #{performanceSalary_money},performanceSalary_desc = #{performanceSalary_desc} where
+        performanceSalary_id = #{performanceSalary_id}
+    </update>
+    <select id="getThisMonthPfs" resultType="com.cjl.model.PerformanceSalary">
+        select * from T_PERFORMANCESALARY where to_char(PERFORMANCESALARY_CREATEDATE,'yyyyMM') = to_char(sysdate,'yyyyMM')
+    </select>
+</mapper>

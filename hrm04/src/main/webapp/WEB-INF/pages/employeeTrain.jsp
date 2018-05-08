@@ -24,5 +24,9 @@
         培训地点:<c:out value="${trainDetail.train.train_address}"/><br>
         培训描述:<c:out value="${trainDetail.train.train_desc}"/><br>
     </c:forEach>
+    <span>返回<a href="toEmployeeSuccess">个人主页面</a></span>
 </body>
+
+
+
 </html>

@@ -5,10 +5,13 @@
         insert into T_SALARY (SALARY_ID, SALARY_MONEY, EMPLOYEE_ID, PERFORMANCESALARY_ID,SALARY_CREATEDATE) VALUES
         (SALARY_SEQUENCE.nextval,#{0},#{1.employee_id},#{2.performanceSalary_id},sysdate)
     </insert>
-    <select id="selectCurrentMonthSalary" resultType="com.cjl.model.Salary">
+    <update id="updateSalary">
+        UPDATE T_SALARY SET SALARY_MONEY = #{salary_money} where salary_id = #{salary_id}
+    </update>
+    <select id="selectCurrentMonthSalary" resultMap="salaryMapper">
         select * from T_SALARY where to_char(SALARY_CREATEDATE,'yyyyMM')=to_char(sysdate,'yyyyMM')
     </select>
-    <select id="selectCurrentMonthSalaryByEmployee" resultType="com.cjl.model.Salary">
+    <select id="selectCurrentMonthSalaryByEmployee" resultMap="salaryMapper">
         select * from T_SALARY where to_char(SALARY_CREATEDATE,'yyyyMM')=to_char(sysdate,'yyyyMM') and EMPLOYEE_ID = #{employee_id}
     </select>
 

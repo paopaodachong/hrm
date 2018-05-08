@@ -12,4 +12,5 @@ import java.util.List;
 public interface RewardService {
     List<Reward> getAllRewardsByEmployee(Employee employee);
     boolean addNewReward(Reward reward);
+    List<Reward> getLastMonthRewardsByEmployee(Employee employee);
 }

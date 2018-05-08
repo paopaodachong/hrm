@@ -3,6 +3,8 @@ package com.cjl.biz;
 import com.cjl.model.Clock;
 import com.cjl.model.Employee;
 
+import java.util.List;
+
 /**
  * Created by 陈佳乐 on 2018/5/7.
  */
@@ -16,4 +18,8 @@ public interface ClockService {
     boolean updateClockOffDate(Clock clock);
 
     boolean addNewClockOnlyOff(Clock clock);
+
+    List<Clock> getLastMonthNormalClockByEmployee(Employee employee);
+
+    List<Clock> getLastMonthOnworkClockByEmployee(Employee employee);
 }

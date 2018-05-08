@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface PerformanceSalaryService {
     boolean addNewPerformanceSalary(PerformanceSalary performanceSalary);
-    List<PerformanceSalary> getThisMonthPfs();
+    PerformanceSalary getThisMonthPfs();
     boolean updatePfs(PerformanceSalary performanceSalary);
 }

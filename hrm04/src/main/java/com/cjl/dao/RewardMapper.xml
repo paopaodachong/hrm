@@ -8,6 +8,9 @@
     <select id="getAllRewardsByEmployee" resultMap="rewardMapper">
         select * from T_REWARD where EMPLOYEE_ID = #{employee_id}
     </select>
+    <select id="getLastMonthRewardsByEmployee" resultMap="rewardMapper">
+        select * from T_REWARD where EMPLOYEE_ID = #{employee_id} and to_char(REWARD_date,'yyyyMM') = to_char(LAST_DAY(ADD_MONTHS(SYSDATE, -1)), 'yyyyMM')
+    </select>
     <resultMap id="rewardMapper" type="com.cjl.model.Reward">
         <result property="reward_id" column="reward_id"/>
         <result property="reward_date" column="reward_date"/>

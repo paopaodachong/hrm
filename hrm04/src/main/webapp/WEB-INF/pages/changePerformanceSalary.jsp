@@ -19,7 +19,7 @@
 <body>
 <div>${message}</div>
 <div>
-    <c:forEach var="performanceSalary" items="${performanceSalaries}">
+
         <h3>绩效奖金查看和修改</h3>
         <form method="post" action="changePerformanceSalary">
             <input type="text" value="${performanceSalary.performanceSalary_id}" name="performanceSalary_id"
@@ -33,7 +33,7 @@
             <input type="submit" value="确认修改">
 
         </form>
-    </c:forEach>
+
 
 </div>
 <span>返回<a href="toAdminSuccess">管理员主页面</a></span>

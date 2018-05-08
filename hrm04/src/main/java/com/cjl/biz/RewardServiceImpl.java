@@ -35,4 +35,9 @@ public class RewardServiceImpl implements RewardService {
     public boolean addNewReward(Reward reward) {
         return rewardMapper.addRewardMapper(reward);
     }
+
+    @Override
+    public List<Reward> getLastMonthRewardsByEmployee(Employee employee) {
+        return rewardMapper.getLastMonthRewardsByEmployee(employee);
+    }
 }

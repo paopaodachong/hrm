@@ -36,10 +36,12 @@ public class AdminController {
         }
 
     }
+
     @RequestMapping("toAdminSuccess")
-    public String toAdminSuccess(){
+    public String toAdminSuccess() {
         return "adminSuccess";
     }
+
     @Resource
     private DeptService deptService;
     @Resource
@@ -50,7 +52,6 @@ public class AdminController {
     private RecruitService recruitService;
 
     /**
-     *
      * @param model
      * @return
      */
@@ -63,20 +64,19 @@ public class AdminController {
     }
 
     /**
-     *
      * @param model
      * @return
      */
-    private Model getAllDetails(Model model){
+    private Model getAllDetails(Model model) {
         List<Dept> depts = deptService.getAllDept();
         List<DeptPosition> deptPositions = deptPositionService.getAllDeptPosition();
         List<EmployeeLevel> employeeLevels = employeeLevelService.getAllEmployeeLevel();
         List<Recruit> recruits = recruitService.getAll();
 
-        model.addAttribute("depts",depts);
-        model.addAttribute("deptPositions",deptPositions);
-        model.addAttribute("employeeLevels",employeeLevels);
-        model.addAttribute("recruits",recruits);
+        model.addAttribute("depts", depts);
+        model.addAttribute("deptPositions", deptPositions);
+        model.addAttribute("employeeLevels", employeeLevels);
+        model.addAttribute("recruits", recruits);
         return model;
     }
 
@@ -86,26 +86,27 @@ public class AdminController {
     private TrainService trainService;
     @Resource
     private TrainDetailService trainDetailService;
+
     @RequestMapping("/toAddTrain")
-    public String toAddTrain(HttpSession session,Model model){
+    public String toAddTrain(HttpSession session, Model model) {
         //获取部门及员工信息
         List<Dept> depts = deptService.getAllDept();
         List<Employee> employees = employeeService.getAllEmployee();
         List<String> deptNames = new ArrayList<>();
-        for (Dept dept:depts){
+        for (Dept dept : depts) {
             String str = dept.getDept_name();
 
             deptNames.add(str);
 
         }
-        model.addAttribute("depts",depts);
-        model.addAttribute("deptNames",deptNames);
-        model.addAttribute("employees",employees);
+        model.addAttribute("depts", depts);
+        model.addAttribute("deptNames", deptNames);
+        model.addAttribute("employees", employees);
         return "addTrain";
     }
 
     @RequestMapping("/addTrain")
-    public String addTrain(Train train, Model model, @Param("dept")String dept){
+    public String addTrain(Train train, Model model, @Param("dept") String dept) {
         //获取部门所有人员
         String message = "添加人员";
         List<Employee> employees = employeeService.getEmployeesByDeptname(dept);
@@ -113,11 +114,11 @@ public class AdminController {
         //添加培训
 
         Integer train_id = trainService.getIdByTrain(train);
-        System.out.println("train_id"+train_id);
-        if (null == train_id){
+        System.out.println("train_id" + train_id);
+        if (null == train_id) {
             trainService.addTrain(train);
             train_id = trainService.getIdByTrain(train);
-        }else {
+        } else {
             message = "相关培训已经存在,无法添加培训,经查看可添加";
         }
 
@@ -125,32 +126,31 @@ public class AdminController {
 
         train.setTrain_id(train_id);
         Integer i = 0;
-        for (Employee employee :employees){
-            i= i +1;
+        for (Employee employee : employees) {
+            i = i + 1;
             System.out.println(employee.getEmployee_id());
             System.out.println(train_id);
-            trainDetailService.addTrainDetaiByTrain(train,employee);
+            trainDetailService.addTrainDetaiByTrain(train, employee);
         }
-        message = message+i+"人";
+        message = message + i + "人";
 
 
-        model.addAttribute("message",message);
+        model.addAttribute("message", message);
         return "adminSuccess";
     }
 
 
-
-
     @Resource
     private PerformanceSalaryService performanceSalaryService;
+
     @RequestMapping("/toAddPerformanceSalary")
-    public String toAddPerformanceSalary(Model model){
-        List<PerformanceSalary> performanceSalaries = performanceSalaryService.getThisMonthPfs();
-        if (null==performanceSalaries||performanceSalaries.size()==0){
+    public String toAddPerformanceSalary(Model model) {
+        PerformanceSalary performanceSalary = performanceSalaryService.getThisMonthPfs();
+        if (null == performanceSalary) {
 
             return "addPerformanceSalary";
-        }else{
-            model.addAttribute("performanceSalaries",performanceSalaries);
+        } else {
+            model.addAttribute("performanceSalary", performanceSalary);
             return "changePerformanceSalary";
         }
 
@@ -159,31 +159,128 @@ public class AdminController {
 
     /**
      * 添加全新的绩效奖金
+     *
      * @param performanceSalary
      * @param model
      * @return
      */
     @RequestMapping("/addPerformanceSalary")
-    public String addPerformanceSalary(PerformanceSalary performanceSalary,Model model){
-        String message = "进入绩效奖金添加环节"+performanceSalary.getPerformanceSalary_money()+performanceSalary.getPerformanceSalary_desc();
+    public String addPerformanceSalary(PerformanceSalary performanceSalary, Model model) {
+        String message = "进入绩效奖金添加环节" + performanceSalary.getPerformanceSalary_money() + performanceSalary.getPerformanceSalary_desc();
 
         if (performanceSalaryService.addNewPerformanceSalary(performanceSalary)) {
-            message = message +"添加成功了";
+            message = message + "添加成功了";
         }
-        model.addAttribute("message",message);
+        model.addAttribute("message", message);
         return "addPerformanceSalary";
     }
+
     @RequestMapping("/changePerformanceSalary")
-    public String changePerformanceSalary(PerformanceSalary performanceSalary,Model model){
+    public String changePerformanceSalary(PerformanceSalary performanceSalary, Model model) {
         String message = "更新失败了";
-        if (performanceSalaryService.updatePfs(performanceSalary)){
+        if (performanceSalaryService.updatePfs(performanceSalary)) {
             message = "更新成功了";
 
         }
-        model.addAttribute("message",message);
+        model.addAttribute("message", message);
         return "changePerformanceSalary";
     }
 
+    @Resource
+    private SalaryService salaryService;
+    @Resource
+    private ClockService clockService;
+    @Resource
+    private RewardService rewardService;
 
+    @RequestMapping("/addAndShowAllSalary")
+    public String addAndShowAllSalary(Model model) {
+        //检查有没有已经添加
+        List<Salary> salaries = salaryService.selectCurrentMonthSalary();
+        List<Employee> employees = employeeService.getAllEmployee();
+        PerformanceSalary performanceSalary = performanceSalaryService.getThisMonthPfs();
+        //要计算每个人的钱,并添加
+        if (null == performanceSalary) {
+            String message = "请首先添加绩效奖金";
+            return "addPerformanceSalary";
+        }
+        //如果已经添加了
+        if (null != salaries && 0 != salaries.size()) {
+            //最好全部更新一下
+            //更新过会儿来写
 
+            for (Employee employee : employees) {
+                Salary salary = salaryService.selectCurrentMonthSalaryByEmployee(employee);
+                //基本薪资
+                double baseSalry = (employee.getDept().getDept_baseSalary()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                //绩效薪资
+                double pfSalary = (performanceSalary.getPerformanceSalary_money()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                //加班工资
+                //1计算工作天数
+                double moreWorkSalary = 0;
+                int normalDays = clockService.getLastMonthNormalClockByEmployee(employee).size();
+                int onworkDays = clockService.getLastMonthOnworkClockByEmployee(employee).size();
+                if (onworkDays >= 22) {
+                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                } else {
+                    //2计算旷工扣除钱数
+                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                }
+                //计算迟到早退钱数
+                double lazyWorkSalary = (normalDays - onworkDays) * 100;
+
+                //奖惩费用
+                List<Reward> rewards = rewardService.getLastMonthRewardsByEmployee(employee);
+                double rewardsSalary = 0;
+                for (Reward reward : rewards) {
+                    rewardsSalary = rewardsSalary + reward.getReward_money();
+                }
+                //社保应发工资0.2
+                double securitySalary = 0.2 * (baseSalry + pfSalary + moreWorkSalary + rewardsSalary);
+                //计算得到薪资
+                double salary_money = baseSalry + pfSalary + moreWorkSalary + rewardsSalary - securitySalary;
+                //加入薪资表中
+                salary.setSalary_money(salary_money);
+                salaryService.updateSalary(salary);
+                model.addAttribute("salaries", salaries);
+            }
+        } else {
+
+            for (Employee employee : employees) {
+                //基本薪资
+                double baseSalry = (employee.getDept().getDept_baseSalary()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                //绩效薪资
+                double pfSalary = (performanceSalary.getPerformanceSalary_money()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+                //加班工资
+                //1计算工作天数
+                double moreWorkSalary = 0;
+                int normalDays = clockService.getLastMonthNormalClockByEmployee(employee).size();
+                int onworkDays = clockService.getLastMonthOnworkClockByEmployee(employee).size();
+                if (onworkDays >= 22) {
+                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                } else {
+                    //2计算旷工扣除钱数
+                    moreWorkSalary = baseSalry * (onworkDays - 22);
+                }
+                //计算迟到早退钱数
+                double lazyWorkSalary = (normalDays - onworkDays) * 100;
+
+                //奖惩费用
+                List<Reward> rewards = rewardService.getLastMonthRewardsByEmployee(employee);
+                double rewardsSalary = 0;
+                for (Reward reward : rewards) {
+                    rewardsSalary = rewardsSalary + reward.getReward_money();
+                }
+                //社保应发工资0.2
+                double securitySalary = 0.2 * (baseSalry + pfSalary + moreWorkSalary + rewardsSalary);
+                //计算得到薪资
+                double salary_money = baseSalry + pfSalary + moreWorkSalary + rewardsSalary - securitySalary;
+                //加入薪资表中
+                salaryService.addSalaryByDetails(salary_money, employee, performanceSalary);
+            }
+            salaries =salaryService.selectCurrentMonthSalary();
+            model.addAttribute("salaries",salaries);
+        }
+        return "addAndShowAllSalary";
+    }
 }

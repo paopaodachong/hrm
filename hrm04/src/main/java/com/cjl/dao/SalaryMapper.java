@@ -15,4 +15,6 @@ public interface SalaryMapper {
     List<Salary> selectCurrentMonthSalary();
     //查看个人当月薪水
     Salary selectCurrentMonthSalaryByEmployee(Employee employee);
+    //刷新个人当月薪水
+    boolean updateSalary(Salary salary);
 }

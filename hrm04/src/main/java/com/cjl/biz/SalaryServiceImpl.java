@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
+ *
  * Created by 陈佳乐 on 2018/5/8.
  */
 @Service
@@ -30,5 +31,10 @@ public class SalaryServiceImpl implements SalaryService {
     @Override
     public Salary selectCurrentMonthSalaryByEmployee(Employee employee) {
         return salaryMapper.selectCurrentMonthSalaryByEmployee(employee);
+    }
+
+    @Override
+    public boolean updateSalary(Salary salary) {
+        return salaryMapper.updateSalary(salary);
     }
 }

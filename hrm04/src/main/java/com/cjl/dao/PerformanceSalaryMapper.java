@@ -10,7 +10,7 @@ import java.util.List;
 public interface PerformanceSalaryMapper {
     boolean addNewPfs(PerformanceSalary performanceSalary);
     //找出当月添加的绩效
-    List<PerformanceSalary> getThisMonthPfs();
+    PerformanceSalary getThisMonthPfs();
 
     boolean updatePfs(PerformanceSalary performanceSalary);
 

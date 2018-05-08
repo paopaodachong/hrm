@@ -21,7 +21,7 @@ public class PerformanceSalaryServiceImpl implements PerformanceSalaryService {
     }
 
     @Override
-    public List<PerformanceSalary> getThisMonthPfs() {
+    public PerformanceSalary getThisMonthPfs() {
         return performanceSalaryMapper.getThisMonthPfs();
     }
 

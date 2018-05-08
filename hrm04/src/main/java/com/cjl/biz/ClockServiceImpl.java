@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by 陈佳乐 on 2018/5/7.
@@ -50,5 +51,15 @@ public class ClockServiceImpl implements ClockService {
     @Override
     public boolean addNewClockOnlyOff(Clock clock) {
         return clockMapper.addNewClockOnlyOff(clock);
+    }
+
+    @Override
+    public List<Clock> getLastMonthNormalClockByEmployee(Employee employee) {
+        return clockMapper.getLastMonthNormalClockByEmployee(employee);
+    }
+
+    @Override
+    public List<Clock> getLastMonthOnworkClockByEmployee(Employee employee) {
+        return clockMapper.getLastMonthOnworkClockByEmployee(employee);
     }
 }

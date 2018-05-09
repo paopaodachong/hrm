@@ -10,4 +10,7 @@ import java.util.List;
 public interface DeptPositionMapper {
     List<DeptPosition> getAllDeptPosition();
     DeptPosition selectDeptpositionByDeptpositionId(Integer deptposition_id);
+    boolean deleteDeptPositionByDP(DeptPosition deptPosition);
+    boolean updateDeptPositionByDP(DeptPosition deptPosition);
+    boolean addDeptPositionByDP(DeptPosition deptPosition);
 }

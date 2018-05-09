@@ -79,6 +79,123 @@ public class AdminController {
         model.addAttribute("recruits", recruits);
         return model;
     }
+    @RequestMapping("/toAdminDept")
+    public String toAdminDept(Model model){
+        List<Dept> depts = deptService.getAllDept();
+        model.addAttribute("depts",depts);
+        return "adminDept";
+    }
+
+    @RequestMapping("/adminDept")
+    public String adminDept(Dept dept ,Model model,@Param("operation")String operation){
+        if (operation.equals("1")){
+            String message = "";
+            List<Employee> employees = employeeService.getEmployeesByDeptname(dept.getDept_name());
+            if (employees==null||employees.size()==0){
+                if (deptService.deleteDeptByDeptId(dept.getDept_id())){
+                    message = "部门删除成功";
+                    List<Dept> depts = deptService.getAllDept();
+                    model.addAttribute("message",message);
+                    model.addAttribute("depts",depts);
+                }
+            }else{
+                message = "部门内还有员工,不能删除";
+                List<Dept> depts = deptService.getAllDept();
+                model.addAttribute("message",message);
+                model.addAttribute("depts",depts);
+            }
+            return "adminDept";
+        }else if (operation.equals("2")){
+            model.addAttribute("dept",dept);
+            return "adminChangeDept";
+        }else if (operation.equals("3")){
+            System.out.println(dept);
+            if (deptService.updateDeptByDept(dept)){
+                String message = "更新成功";
+                List<Dept> depts = deptService.getAllDept();
+                model.addAttribute("message",message);
+                model.addAttribute("depts",depts);
+            }
+            return "adminDept";
+        }else if (operation.equals("4")){
+            /*if (deptService.selectDeptByDeptName(dept)==null){
+                if (deptService.addDeptByDept(dept)){
+                    String message = "添加成功";
+                    List<Dept> depts = deptService.getAllDept();
+                    model.addAttribute("message",message);
+                    model.addAttribute("depts",depts);
+                }
+                return "adminDept";
+            }else{
+                String message = "您要添加的部门重名,已返回主页面";
+                List<Dept> depts = deptService.getAllDept();
+                model.addAttribute("message",message);
+                model.addAttribute("depts",depts);
+                return "adminDept";
+            }*/
+        }
+        return "adminSuccess";
+    }
+
+
+    @RequestMapping("/toAddDept")
+    public String toAddDept(){
+        return "addDept";
+    }
+    @RequestMapping("/addDept")
+    public String addDept(Model model,Dept dept){
+        if (deptService.selectDeptByDeptName(dept)==null){
+            if (deptService.addDeptByDept(dept)){
+                String message = "添加成功";
+                List<Dept> depts = deptService.getAllDept();
+                model.addAttribute("message",message);
+                model.addAttribute("depts",depts);
+            }
+            return "adminDept";
+        }else{
+            String message = "您要添加的部门重名,已返回主页面";
+            List<Dept> depts = deptService.getAllDept();
+            model.addAttribute("message",message);
+            model.addAttribute("depts",depts);
+            return "adminDept";
+        }
+    }
+    @RequestMapping("/toAdminDeptPosition")
+    public String toDeptPosition(Model model){
+        List<DeptPosition> deptPositions = deptPositionService.getAllDeptPosition();
+        model.addAttribute("deptPositions",deptPositions);
+        return "adminDeptPosition";
+    }
+    @RequestMapping("/adminDeptPosition")
+    public String deptPosition(Model model,DeptPosition deptPosition,@Param("operation")String operation){
+        //判断operation来进行相关操作
+        if (operation.equals("1")){
+            //进行删除操作
+            if (deptPositionService.deleteDeptPositionByDP(deptPosition)){
+                String message = "删除成功!";
+                model.addAttribute("message",message);
+            }
+        }else if (operation.equals("2")){
+            //进行修改操作
+            model.addAttribute("deptPosition",deptPosition);
+            return "adminChangeDeptPosition";
+        }else if (operation.equals("3")){
+            if (deptPositionService.updateDeptPositionByDP(deptPosition)){
+                String message = "更新成功";
+                model.addAttribute("message",message);
+            }
+        }else if (operation.equals("4")){
+            return "adminAddDeptPosition";
+        }else if (operation.equals("5")){
+            if (deptPositionService.addDeptPositionByDP(deptPosition)){
+                String message = "添加成功";
+                model.addAttribute("message",message);
+            }
+        }
+        List<DeptPosition> deptPositions = deptPositionService.getAllDeptPosition();
+        model.addAttribute("deptPositions",deptPositions);
+        return "adminDeptPosition";
+    }
 
     @Resource
     private EmployeeService employeeService;
@@ -143,6 +260,11 @@ public class AdminController {
     @Resource
     private PerformanceSalaryService performanceSalaryService;
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping("/toAddPerformanceSalary")
     public String toAddPerformanceSalary(Model model) {
         PerformanceSalary performanceSalary = performanceSalaryService.getThisMonthPfs();
@@ -175,6 +297,12 @@ public class AdminController {
         return "addPerformanceSalary";
     }
 
+    /**
+     *
+     * @param performanceSalary
+     * @param model
+     * @return
+     */
     @RequestMapping("/changePerformanceSalary")
     public String changePerformanceSalary(PerformanceSalary performanceSalary, Model model) {
         String message = "更新失败了";
@@ -193,6 +321,11 @@ public class AdminController {
     @Resource
     private RewardService rewardService;
 
+    /**
+     *  生成和处理上月薪资结算
+     * @param model
+     * @return
+     */
     @RequestMapping("/addAndShowAllSalary")
     public String addAndShowAllSalary(Model model) {
         //检查有没有已经添加
@@ -290,5 +423,65 @@ public class AdminController {
             model.addAttribute("salaries",salaries);
         }
         return "addAndShowAllSalary";
+    }
+
+    @Resource
+    private SalaryDefService salaryDefService;
+
+    /**
+     * 薪资复议添加程序,在判别该员工当月只有一条薪资复议后,进行薪资复议添加
+     * @param salaryDef
+     * @param httpSession
+     * @return
+     */
+    @RequestMapping("/addSalaryDef")
+    public String addSalaryDef(SalaryDef salaryDef,HttpSession httpSession,Model model){
+        //获取页面中的员工信息
+        Employee employee = (Employee) httpSession.getAttribute("employee");
+        //入方法判断
+        if (salaryDefService.getCurrentByEmployee(employee)!=null){
+            String message = "您本月已提起过薪资复议";
+            model.addAttribute("message",message);
+            return "employeeSalary";
+        }
+        salaryDef.setEmployee(employee);
+        salaryDefService.addNewSalaryDef(salaryDef);
+
+        String message = "您本月薪资复议提起成功,等待管理员处理";
+        model.addAttribute("message",message);
+        return "employeeSalary";
+    }
+
+    /**
+     * 链接,需要传数据
+     * @return
+     */
+    @RequestMapping("/showSalaryDef")
+    public String showSalaryDef(Model model){
+        //要传过去的页面是用来处理薪资复议的,先将未处理的薪资复议传过去
+        List<SalaryDef> salaryDefs = salaryDefService.getUnresolveDef();
+        model.addAttribute("salaryDefs",salaryDefs);
+        return "adminSalaryDefCandel";
+    }
+
+    @RequestMapping("/resolveSalaryDef")
+    public String resolveSalaryDef(Reward reward,
+                                   @Param("salaryDef_id")Integer salaryDef_id,
+                                   @Param("resolving")String resolving,
+                                   @Param("employee_id")Integer employee_id,
+                                   Model model){
+        String message = "";
+        if (resolving.equals("1")) {
+            message = "您同意了该薪资复议";
+            salaryDefService.updateSalaryDefBySalaryDefIdAndState(salaryDef_id, 1);
+            if (rewardService.adminAddNewReward(reward, employee_id)) {
+                message = message + "并且添加到了奖惩中";
+            }
+        } else if (resolving.equals("2")) {
+            salaryDefService.updateSalaryDefBySalaryDefIdAndState(salaryDef_id, 2);
+            message = "您否决了该薪资复议";
+        }
+        model.addAttribute("message",message);
+        return showSalaryDef(model);
     }
 }

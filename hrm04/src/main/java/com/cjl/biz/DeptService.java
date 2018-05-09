@@ -10,4 +10,8 @@ import java.util.List;
  */
 public interface DeptService {
     List<Dept> getAllDept();
+    boolean deleteDeptByDeptId(Integer dept_id);
+    boolean updateDeptByDept(Dept dept);
+    Dept selectDeptByDeptName(Dept dept);
+    boolean addDeptByDept(Dept dept);
 }

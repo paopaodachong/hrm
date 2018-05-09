@@ -13,4 +13,5 @@ public interface RewardService {
     List<Reward> getAllRewardsByEmployee(Employee employee);
     boolean addNewReward(Reward reward);
     List<Reward> getLastMonthRewardsByEmployee(Employee employee);
+    boolean adminAddNewReward(Reward reward,Integer employee_id);
 }

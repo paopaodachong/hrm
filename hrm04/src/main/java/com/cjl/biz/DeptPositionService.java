@@ -9,4 +9,7 @@ import java.util.List;
  */
 public interface DeptPositionService {
     List<DeptPosition> getAllDeptPosition();
+    boolean deleteDeptPositionByDP(DeptPosition deptPosition);
+    boolean updateDeptPositionByDP(DeptPosition deptPosition);
+    boolean addDeptPositionByDP(DeptPosition deptPosition);
 }

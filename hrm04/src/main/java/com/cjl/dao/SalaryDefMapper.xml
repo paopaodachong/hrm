@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.dao.SalaryDefMapper">
+    <insert id="addNewSalaryDef">
+        insert into T_SALARYDEF (SALARYDEF_ID, SALARYDEF_MONEY, SALARYDEF_DESC, SALARYDEF_STATE, SALARYDEF_CREATEDATE, EMPLOYEE_ID) VALUES
+        (SALARYDEF_SEQUENCE.nextval,#{salaryDef_money},#{salaryDef_desc},0,sysdate,#{employee.employee_id})
+    </insert>
+    <update id="updateSalaryDefBySalaryDefIdAndState">
+        UPDATE T_SALARYDEF SET SALARYDEF_STATE = #{1} WHERE salaryDef_id = #{0}
+    </update>
+    <select id="getCurrentByEmployee" resultMap="salaryDefMapper">
+        SELECT * from T_SALARYDEF WHERE EMPLOYEE_ID = #{employee_id} and TO_CHAR(SALARYDEF_CREATEDATE,'yyyyMM') = TO_CHAR(SYSDATE,'yyyyMM')
+    </select>
+    <select id="getUnresolveDef" resultMap="salaryDefMapper">
+        SELECT * from T_SALARYDEF WHERE SALARYDEF_STATE = 0
+    </select>
+    <resultMap id="salaryDefMapper" type="com.cjl.model.SalaryDef">
+        <result property="salaryDef_id" column="salaryDef_id"/>
+        <result property="salaryDef_desc" column="salaryDef_desc"/>
+        <result property="salaryDef_money" column="salaryDef_money"/>
+        <result property="salaryDef_createDate" column="salaryDef_createDate"/>
+        <result property="salaryDef_state" column="salaryDef_state"/>
+        <association property="employee" column="employee_id" select="com.cjl.dao.EmployeeMapper.selectEmployeeByEmployeeId"/>
+    </resultMap>
+</mapper>

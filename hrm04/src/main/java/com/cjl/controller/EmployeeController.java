@@ -1,10 +1,8 @@
 package com.cjl.controller;
 
 import com.cjl.biz.*;
-import com.cjl.model.Clock;
-import com.cjl.model.Employee;
-import com.cjl.model.Reward;
-import com.cjl.model.TrainDetail;
+import com.cjl.model.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,6 +88,8 @@ public class EmployeeController {
         model.addAttribute("trainDetails",trainDetails);
         return "employeeTrain";
     }
+
+
     @Resource
     private RewardService rewardService;
     /**
@@ -121,12 +121,72 @@ public class EmployeeController {
         return "employeeAttence";
     }
 
+    @Resource
+    private SalaryService salaryService;
+    @Resource
+    private PerformanceSalaryService performanceSalaryService;
     /**
      * 跳转至公司员工薪资结算信息的方法
      * @return
      */
     @RequestMapping("/toEmployeeSalary")
-    public String toEmployeeSalary(){
+    public String toEmployeeSalary(HttpSession httpSession,Model model){
+        Employee employee = (Employee) httpSession.getAttribute("employee");
+        Salary salary = salaryService.selectCurrentMonthSalaryByEmployee(employee);
+        PerformanceSalary performanceSalary = performanceSalaryService.getThisMonthPfs();
+
+        String message = "正在查看个人上月薪水信息";
+        if (null==salary){
+            message = "管理员尚未完成工资条";
+        }else{
+            //基本薪资
+            double baseSalry = (employee.getDept().getDept_baseSalary()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+            System.out.println("基本薪资"+baseSalry);
+            model.addAttribute("baseSalary",baseSalry);
+            //绩效薪资
+            double pfSalary = (performanceSalary.getPerformanceSalary_money()) * (employee.getDeptPosition().getDeptPosition_salaryRatio()) * (employee.getEmployeeLevel().getEmployeeLevel_salaryRatio());
+            System.out.println("绩效薪资"+pfSalary);
+            model.addAttribute("pfsSalary",pfSalary);
+            //加班工资
+            //1计算工作天数
+            double moreWorkSalary = 0;
+            int normalDays = clockService.getLastMonthNormalClockByEmployee(employee).size();
+            int onworkDays = clockService.getLastMonthOnworkClockByEmployee(employee).size();
+            System.out.println("正常打卡天数"+normalDays);
+            model.addAttribute("normalDays",normalDays);
+            model.addAttribute("onworkDays",onworkDays);
+            System.out.println("加迟到打卡天数"+onworkDays);
+            if (onworkDays >= 22) {
+                moreWorkSalary = baseSalry * (onworkDays - 22)/22;
+            } else {
+                //2计算旷工扣除钱数
+                moreWorkSalary = baseSalry * (onworkDays - 22)/22;
+            }
+            model.addAttribute("moreWorkSalary",moreWorkSalary);
+            System.out.println("加班费"+moreWorkSalary);
+            //计算迟到早退钱数
+            double lazyWorkSalary = (normalDays - onworkDays) * 50;
+            System.out.println("迟到早退扣除钱"+lazyWorkSalary);
+            model.addAttribute("lazyWorkSalary",lazyWorkSalary);
+            //奖惩费用
+            List<Reward> rewards = rewardService.getLastMonthRewardsByEmployee(employee);
+            double rewardsSalary = 0;
+            for (Reward reward : rewards) {
+                rewardsSalary = rewardsSalary + reward.getReward_money();
+            }
+            System.out.println("各项奖赏的钱"+rewardsSalary);
+            model.addAttribute("rewardsSalary",rewardsSalary);
+            //社保应发工资0.2
+
+            double securitySalary = 0.2 * (baseSalry + pfSalary + moreWorkSalary + rewardsSalary);
+            System.out.println("社保"+securitySalary);
+            model.addAttribute("securitySalary",securitySalary);
+            //计算得到薪资
+            double salary_money = baseSalry + pfSalary + moreWorkSalary + rewardsSalary - securitySalary;
+            model.addAttribute("salary_money",salary_money);
+            message = "管理员已完成工资条制作";
+        }
+        model.addAttribute("message",message);
         return "employeeSalary";
     }
 
@@ -317,4 +377,26 @@ public class EmployeeController {
         model.addAttribute("message",message);
         return "employeeAttence";
     }
+
+
+    @Resource
+    private SalaryDefService salaryDefService;
+    @RequestMapping("/toEmployeeSalaryDef")
+    public String toEmployeeSalaryDef(HttpSession httpSession,Model model){
+        Employee employee = (Employee) httpSession.getAttribute("employee");
+        SalaryDef salaryDef = salaryDefService.getCurrentByEmployee(employee);
+        if (null==salaryDef){
+            String message = "请添加您对本次薪资结算的复议";
+            model.addAttribute("message",message);
+            return "addSalaryDef";
+        } else{
+            String message = "您本月已提起过薪资结算复议,不能再提起";
+            model.addAttribute("message",message);
+            return "employeeSalary";
+        }
+
+
+
+    }
+
 }

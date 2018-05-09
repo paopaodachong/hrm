@@ -16,4 +16,6 @@ public interface RewardMapper {
     List<Reward> getAllRewardsByEmployee(Employee employee);
     //获得所有该员工上个月的奖惩信息
     List<Reward> getLastMonthRewardsByEmployee(Employee employee);
+
+    boolean adminAddNewReward(Reward reward,Integer employee_id);
 }

@@ -3,7 +3,11 @@
 <mapper namespace="com.cjl.dao.RewardMapper">
     <insert id="addRewardMapper">
         insert into T_REWARD (REWARD_ID, REWARD_DATE, REWARD_NAME, REWARD_DESC, REWARD_MONEY, EMPLOYEE_ID) VALUES
-        (REWARD_SEQUENCE.nextval,#{reward_date},#{reward_name},#{reward_desc},#{reward_money},#{employee.employee_id})
+        (REWARD_SEQUENCE.nextval,sysdate,#{reward_name},#{reward_desc},#{reward_money},#{employee.employee_id})
+    </insert>
+    <insert id="adminAddNewReward">
+        insert into T_REWARD (REWARD_ID, REWARD_DATE, REWARD_NAME, REWARD_DESC, REWARD_MONEY, EMPLOYEE_ID) VALUES
+        (REWARD_SEQUENCE.nextval,sysdate,#{0.reward_name},#{0.reward_desc},#{0.reward_money},#{1})
     </insert>
     <select id="getAllRewardsByEmployee" resultMap="rewardMapper">
         select * from T_REWARD where EMPLOYEE_ID = #{employee_id}

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cjl.dao.DeptPositionMapper">
+    <insert id="addDeptPositionByDP">
+        INSERT into T_DEPTPOSITION (DEPTPOSITION_ID, DEPTPOSITION_NAME, DEPTPOSITION_SALARYRATIO) VALUES
+        (DEPTPOSITION_SENQUENCE.nextval,#{deptPosition_name},#{deptPosition_salaryRatio})
+    </insert>
+    <update id="updateDeptPositionByDP">
+        UPDATE T_DEPTPOSITION SET DEPTPOSITION_NAME = #{deptPosition_name},deptPosition_salaryRatio = #{deptPosition_salaryRatio} where
+        deptPosition_id = #{deptPosition_id}
+    </update>
+    <delete id="deleteDeptPositionByDP">
+        DELETE FROM T_DEPTPOSITION where DEPTPOSITION_ID = #{deptPosition_id}
+    </delete>
 
     <select id="getAllDeptPosition" resultType="com.cjl.model.DeptPosition">
         select * from T_DEPTPOSITION

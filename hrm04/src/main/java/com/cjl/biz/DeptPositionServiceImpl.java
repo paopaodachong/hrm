@@ -23,4 +23,19 @@ public class DeptPositionServiceImpl implements DeptPositionService {
     public List<DeptPosition> getAllDeptPosition() {
         return deptPositionMapper.getAllDeptPosition();
     }
+
+    @Override
+    public boolean deleteDeptPositionByDP(DeptPosition deptPosition) {
+        return deptPositionMapper.deleteDeptPositionByDP(deptPosition);
+    }
+
+    @Override
+    public boolean updateDeptPositionByDP(DeptPosition deptPosition) {
+        return deptPositionMapper.updateDeptPositionByDP(deptPosition);
+    }
+
+    @Override
+    public boolean addDeptPositionByDP(DeptPosition deptPosition) {
+        return deptPositionMapper.addDeptPositionByDP(deptPosition);
+    }
 }

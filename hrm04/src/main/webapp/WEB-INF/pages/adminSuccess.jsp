@@ -20,7 +20,7 @@
     <h3><a href="getAll">查看当前部门/部门职位/职工等级设置</a></h3>
     <h3><a href="toAdminDept">部门操作</a></h3>
     <h3><a href="toAdminDeptPosition">职位操作</a></h3>
-    <h3>员工操作</h3>
+    <h3><a href="toAdminEmployee">员工操作</a></h3>
     <h3>应聘操作</h3>
     <h3><a href="toAddTrain">添加培训</a> </h3>
 

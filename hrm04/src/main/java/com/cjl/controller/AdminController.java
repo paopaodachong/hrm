@@ -484,4 +484,34 @@ public class AdminController {
         model.addAttribute("message",message);
         return showSalaryDef(model);
     }
+
+
+    @RequestMapping("/toAdminEmployee")
+    public String toAdminEmployee(Model model){
+        model = getAllDetails(model);
+        return "adminEmployee";
+    }
+    @RequestMapping("adminEmployee")
+    public String adminEmployee(Model model,
+                                @Param("operation")String operation,
+                                @Param("dept_name")String dept_name,
+                                @Param("deptPosition_name")String deptPosition_name,
+                                @Param("employeeLevel_name")String employeeLevel_name,
+                                Employee employee){
+        model = getAllDetails(model);
+        if (null==operation){
+            return "adminSuccess";
+        }
+        if (operation.equals("1")){
+            List<Employee> employees = employeeService.getEmployeesByDeptname(dept_name);
+            model.addAttribute("deptEmployee",employees);
+        }else if (operation.equals("2")){
+            Employee employee1 = employeeService.selectEmployeeByEmployeeId(employee.getEmployee_id());
+            model.addAttribute("changeEmployee",employee1);
+            return "adminChangeEmployee";
+        }else if (operation.equals("3")){
+            System.out.println(employee+dept_name+deptPosition_name+employeeLevel_name);
+        }
+        return "adminEmployee";
+    }
 }

@@ -28,4 +28,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getEmployeesByDeptname(String deptname) {
         return employeeMapper.getEmployeesByDeptName(deptname);
     }
+
+    @Override
+    public Employee selectEmployeeByEmployeeId(Integer employeeId) {
+        return employeeMapper.selectEmployeeByEmployeeId(employeeId);
+    }
 }

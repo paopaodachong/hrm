@@ -11,4 +11,5 @@ public interface EmployeeService {
     Employee loginEmployee(Employee employee);
     List<Employee> getAllEmployee();
     List<Employee> getEmployeesByDeptname(String deptname);
+    Employee selectEmployeeByEmployeeId(Integer employeeId);
 }
